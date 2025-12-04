@@ -1,0 +1,43 @@
+# OS Files
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+
+# IDE & Editors
+.vscode/
+.idea/
+*.sublime-workspace
+
+# Python
+__pycache__/
+*.py[cod]
+*.so
+venv/
+ENV/
+env/
+.env
+
+# Node
+node_modules/
+npm-debug.log
+
+# Compiled exports
+*.pdf
+*.epub
+*.docx
+
+# Backup
+*.bak
+*.tmp
+*.backup
+
+# Large files
+*.zip
+*.tar.gz
+*.7z
+
+# OS temp
+.DS_Store
+.Trashes

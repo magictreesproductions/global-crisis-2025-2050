@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Case Studies - Global Crisis 2025-2050</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        :root {
+            --primary-dark: #0a0a0a;
+            --secondary-dark: #1a1a1a;
+            --accent-dark: #2a2a2a;
+            --text-primary: #ffffff;
+            --text-secondary: #b0b0b0;
+            --accent-blue: #3b82f6;
+            --accent-amber: #f59e0b;
+            --accent-red: #ef4444;
+            --accent-green: #10b981;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--primary-dark);
+            color: var(--text-primary);
+        }
+        
+        .case-study-card {
+            background: linear-gradient(145deg, rgba(26, 26, 26, 0.8), rgba(42, 42, 42, 0.6));
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .case-study-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+            border-color: var(--accent-blue);
+        }
+        
+        .nav-blur {
+            backdrop-filter: blur(20px);
+            background: rgba(10, 10, 10, 0.8);
+        }
+        
+        .timeline-item {
+            position: relative;
+            padding-left: 2rem;
+        }
+        
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0.5rem;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: var(--accent-blue);
+        }
+        
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            left: 5px;
+            top: 1.25rem;
+            width: 2px;
+            height: calc(100% - 1rem);
+            background: rgba(59, 130, 246, 0.3);
+        }
+        
+        .timeline-item:last-child::after {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 nav-blur border-b border-gray-800">
+        <div class="max-w-7xl mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-3">
+                    <div class="w-8 h-8 bg-gradient-to-r from-blue-500 to-amber-500 rounded-lg flex items-center justify-center">
+                        <i class="fas fa-globe text-white text-sm"></i>
+                    </div>
+                    <div>
+                        <h1 class="text-xl font-bold">Global Crisis Analysis</h1>
+                        <p class="text-xs text-gray-400">Project by @mag00s</p>
+                    </div>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="text-gray-300 hover:text-white transition-colors">Overview</a>
+                    <a href="volumes.html" class="text-gray-300 hover:text-white transition-colors">Volumes</a>
+                    <a href="scenarios.html" class="text-gray-300 hover:text-white transition-colors">Scenarios</a>
+                    <a href="data.html" class="text-gray-300 hover:text-white transition-colors">Data</a>
+                    <a href="contribute.html" class="text-gray-300 hover:text-white transition-colors">Contribute</a>
+                    <a href="case-studies.html" class="text-white">Case Studies</a>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <a href="https://github.com/magictreesproductions/global-crisis-2025-2050" target="_blank" class="text-gray-300 hover:text-white">
+                        <i class="fab fa-github text-xl"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="pt-32 pb-16 bg-gradient-to-b from-black to-gray-900">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <h1 class="text-5xl font-bold mb-6">Crisis Case Studies</h1>
+            <p class="text-xl text-gray-300 max-w-4xl mx-auto">
+                Detailed analysis of specific crisis situations that exemplify the interconnected nature 
+                of global challenges. Each case study demonstrates how local events cascade into systemic risks.
+            </p>
+        </div>
+    </section>
+
+    <!-- Featured Case Studies -->
+    <section class="py-20 bg-black">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-6">Featured Case Studies</h2>
+                <p class="text-xl text-gray-300 max-w-4xl mx-auto">
+                    These detailed examinations reveal how individual crises interconnect and amplify 
+                    each other, creating cascading effects that threaten global stability.
+                </p>
+            </div>
+            
+            <div class="grid lg:grid-cols-2 gap-8">
+                <!-- Ukraine Crisis -->
+                <div class="case-study-card rounded-2xl p-8">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 bg-red-500/20 rounded-lg flex items-center justify-center mr-4">
+                            <i class="fas fa-crosshairs text-red-400 text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-bold">Ukraine Crisis</h3>
+                            <p class="text-gray-400">Geopolitical Interconnection Analysis</p>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-6">
+                        <img src="volume1-geo.png" alt="Ukraine Crisis" class="w-full h-48 object-cover rounded-xl mb-4">
+                        <p class="text-gray-300 mb-4">
+                            The Ukraine conflict exemplifies how regional wars cascade into global crises through 
+                            energy markets, food security, information warfare, and alliance systems.
+                        </p>
+                    </div>
+                    
+                    <div class="grid md:grid-cols-2 gap-6 mb-6">
+                        <div>
+                            <h4 class="font-semibold text-white mb-3">Crisis Interconnections</h4>
+                            <ul class="space-y-2 text-gray-300">
+                                <li class="flex items-center">
+                                    <i class="fas fa-arrow-right text-red-400 mr-2 text-xs"></i>
+                                    Energy market disruption
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-arrow-right text-red-400 mr-2 text-xs"></i>
+                                    Global food security threat
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-arrow-right text-red-400 mr-2 text-xs"></i>
+                                    Information warfare escalation
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-arrow-right text-red-400 mr-2 text-xs"></i>
+                                    NATO alliance stress
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-arrow-right text-red-400 mr-2 text-xs"></i>
+                                    Nuclear risk elevation
+                                </li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-white mb-3">Global Impact Metrics</h4>
+                            <div class="space-y-3">
+                                <div class="bg-red-500/10 border border-red-500/30 rounded-lg p-3">
+                                    <div class="text-2xl font-bold text-red-400">40%</div>
+                                    <div class="text-sm text-gray-300">Global wheat price increase</div>
+                                </div>
+                                <div class="bg-red-500/10 border border-red-500/30 rounded-lg p-3">
+                                    <div class="text-2xl font-bold text-red-400">15M</div>
+                                    <div class="text-sm text-gray-300">Displaced persons</div>
+                                </div>
+                                <div class="bg-red-500/10 border border-red-500/30 rounded-lg p-3">
+                                    <div class="text-2xl font-bold text-red-400">$350B</div>
+                                    <div class="text-sm text-gray-300">Economic damage</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-center justify-between">
+                        <div class="flex space-x-2">
+                            <span class="bg-gray-700 px-2 py-1 rounded text-xs">Geopolitical</span>
+                            <span class="bg-gray-700 px-2 py-1 rounded text-xs">Economic</span>
+                            <span class="bg-gray-700 px-2 py-1 rounded text-xs">Information</span>
+                        </div>
+                        <a href="#" class="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-lg text-sm font-semibold transition-colors">
+                            <i class="fas fa-external-link-alt mr-1"></i>
+                            Read Full Case Study
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Sahel Crisis -->
+                <div class="case-study-card rounded-2xl p-8">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 bg-amber-500/20 rounded-lg flex items-center justify-center mr-4">
+                            <i class="fas fa-thermometer-half text-amber-400 text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-bold">Sahel Crisis</h3>
+                            <p class="text-gray-400">Climate + Conflict Nexus</p>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-6">
+                        <img src="volume3-env-v2.png" alt="Sahel Crisis" class="w-full h-48 object-cover rounded-xl mb-4">
+                        <p class="text-gray-300 mb-4">
+                            The Sahel region demonstrates how climate change, resource scarcity, and political 
+                            instability create feedback loops that drive conflict and migration.
+                        </p>
+                    </div>
+                    
+                    <div class="grid md:grid-cols-2 gap-6 mb-6">
+                        <div>
+                            <h4 class="font-semibold text-white mb-3">Cascading Effects</h4>
+                            <ul class="space-y-2 text-gray-300">
+                                <li class="flex items-center">
+                                    <i class="fas fa-arrow-right text-amber-400 mr-2 text-xs"></i>
+                                    Desertification acceleration
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-arrow-right text-amber-400 mr-2 text-xs"></i>
+                                    Water resource conflicts
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-arrow-right text-amber-400 mr-2 text-xs"></i>
+                                    Pastoralist-farmer tensions
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-arrow-right text-amber-400 mr-2 text-xs"></i>
+                                    Jihadist group recruitment
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-arrow-right text-amber-400 mr-2 text-xs"></i>
+                                    International migration
+                                </li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-white mb-3">Regional Impact</h4>
+                            <div class="space-y-3">
+                                <div class="bg-amber-500/10 border border-amber-500/30 rounded-lg p-3">
+                                    <div class="text-2xl font-bold text-amber-400">3.5M</div>
+                                    <div class="text-sm text-gray-300">Internally displaced</div>
+                                </div>
+                                <div class="bg-amber-500/10 border border-amber-500/30 rounded-lg p-3">
+                                    <div class="text-2xl font-bold text-amber-400">70%</div>
+                                    <div class="text-sm text-gray-300">Population under 25</div>
+                                </div>
+                                <div class="bg-amber-500/10 border border-amber-500/30 rounded-lg p-3">
+                                    <div class="text-2xl font-bold text-amber-400">2°C</div>
+                                    <div class="text-sm text-gray-300">Temperature rise since 1970</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-center justify-between">
+                        <div class="flex space-x-2">
+                            <span class="bg-gray-700 px-2 py-1 rounded text-xs">Climate</span>
+                            <span class="bg-gray-700 px-2 py-1 rounded text-xs">Migration</span>
+                            <span class="bg-gray-700 px-2 py-1 rounded text-xs">Security</span>
+                        </div>
+                        <a href="#" class="bg-amber-600 hover:bg-amber-700 text-white px-4 py-2 rounded-lg text-sm font-semibold transition-colors">
+                            <i class="fas fa-external-link-alt mr-1"></i>
+                            Read Full Case Study
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Taiwan Strait Crisis -->
+                <div class="case-study-card rounded-2xl p-8">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 bg-blue-500/20 rounded-lg flex items-center justify-center mr-4">
+                            <i class="fas fa-microchip text-blue-400 text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-bold">Taiwan Strait Crisis</h3>
+                            <p class="text-gray-400">Technology + Geopolitics</p>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-6">
+                        <img src="volume2-tech.png" alt="Taiwan Crisis" class="w-full h-48 object-cover rounded-xl mb-4">
+                        <p class="text-gray-300 mb-4">
+                            The Taiwan situation exemplifies how technology dependencies and geopolitical tensions 
+                            create systemic risks for the global economy and security architecture.
+                        </p>
+                    </div>
+                    
+                    <div class="grid md:grid-cols-2 gap-6 mb-6">
+                        <div>
+                            <h4 class="font-semibold text-white mb-3">Technology Dependencies</h4>
+                            <ul class="space-y-2 text-gray-300">
+                                <li class="flex items-center">
+                                    <i class="fas fa-arrow-right text-blue-400 mr-2 text-xs"></i>
+                                    Semiconductor supply chain
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-arrow-right text-blue-400 mr-2 text-xs"></i>
+                                    Advanced chip manufacturing
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-arrow-right text-blue-400 mr-2 text-xs"></i>
+                                    AI development hardware
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-arrow-right text-blue-400 mr-2 text-xs"></i>
+                                    Quantum computing research
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-arrow-right text-blue-400 mr-2 text-xs"></i>
+                                    Cyber warfare capabilities
+                                </li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-white mb-3">Global Impact</h4>
+                            <div class="space-y-3">
+                                <div class="bg-blue-500/10 border border-blue-500/30 rounded-lg p-3">
+                                    <div class="text-2xl font-bold text-blue-400">92%</div>
+                                    <div class="text-sm text-gray-300">Advanced chip production</div>
+                                </div>
+                                <div class="bg-blue-500/10 border border-blue-500/30 rounded-lg p-3">
+                                    <div class="text-2xl font-bold text-blue-400">$2T</div>
+                                    <div class="text-sm text-gray-300">Economic impact of conflict</div>
+                                </div>
+                                <div class="bg-blue-500/10 border border-blue-500/30 rounded-lg p-3">
+                                    <div class="text-2xl font-bold text-blue-400">6 Months</div>
+                                    <div class="text-sm text-gray-300">Supply chain disruption</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-center justify-between">
+                        <div class="flex space-x-2">
+                            <span class="bg-gray-700 px-2 py-1 rounded text-xs">Technology</span>
+                            <span class="bg-gray-700 px-2 py-1 rounded text-xs">Geopolitics</span>
+                            <span class="bg-gray-700 px-2 py-1 rounded text-xs">Economics</span>
+                        </div>
+                        <a href="#" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg text-sm font-semibold transition-colors">
+                            <i class="fas fa-external-link-alt mr-1"></i>
+                            Read Full Case Study
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Amazon Tipping Point -->
+                <div class="case-study-card rounded-2xl p-8">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 bg-green-500/20 rounded-lg flex items-center justify-center mr-4">
+                            <i class="fas fa-tree text-green-400 text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-bold">Amazon Tipping Point</h3>
+                            <p class="text-gray-400">Environmental System Collapse</p>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-6">
+                        <img src="volume3-env-v2.png" alt="Amazon Crisis" class="w-full h-48 object-cover rounded-xl mb-4">
+                        <p class="text-gray-300 mb-4">
+                            The Amazon rainforest approaching its tipping point demonstrates how environmental 
+                            degradation can trigger irreversible climate and ecological consequences.
+                        </p>
+                    </div>
+                    
+                    <div class="grid md:grid-cols-2 gap-6 mb-6">
+                        <div>
+                            <h4 class="font-semibold text-white mb-3">Systemic Risks</h4>
+                            <ul class="space-y-2 text-gray-300">
+                                <li class="flex items-center">
+                                    <i class="fas fa-arrow-right text-green-400 mr-2 text-xs"></i>
+                                    Carbon release acceleration
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-arrow-right text-green-400 mr-2 text-xs"></i>
+                                    Regional rainfall disruption
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-arrow-right text-green-400 mr-2 text-xs"></i>
+                                    Biodiversity collapse
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-arrow-right text-green-400 mr-2 text-xs"></i>
+                                    Indigenous displacement
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-arrow-right text-green-400 mr-2 text-xs"></i>
+                                    Global climate feedback
+                                </li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-white mb-3">Critical Thresholds</h4>
+                            <div class="space-y-3">
+                                <div class="bg-green-500/10 border border-green-500/30 rounded-lg p-3">
+                                    <div class="text-2xl font-bold text-green-400">20-25%</div>
+                                    <div class="text-sm text-gray-300">Deforestation tipping point</div>
+                                </div>
+                                <div class="bg-green-500/10 border border-green-500/30 rounded-lg p-3">
+                                    <div class="text-2xl font-bold text-green-400">90Gt</div>
+                                    <div class="text-sm text-gray-300">Potential carbon release</div>
+                                </div>
+                                <div class="bg-green-500/10 border border-green-500/30 rounded-lg p-3">
+                                    <div class="text-2xl font-bold text-green-400">18%</div>
+                                    <div class="text-sm text-gray-300">Current deforestation</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-center justify-between">
+                        <div class="flex space-x-2">
+                            <span class="bg-gray-700 px-2 py-1 rounded text-xs">Environment</span>
+                            <span class="bg-gray-700 px-2 py-1 rounded text-xs">Climate</span>
+                            <span class="bg-gray-700 px-2 py-1 rounded text-xs">Biodiversity</span>
+                        </div>
+                        <a href="#" class="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-lg text-sm font-semibold transition-colors">
+                            <i class="fas fa-external-link-alt mr-1"></i>
+                            Read Full Case Study
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Crisis Timeline -->
+    <section class="py-20 bg-gradient-to-b from-black to-gray-900">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-6">Crisis Development Timeline</h2>
+                <p class="text-xl text-gray-300 max-w-4xl mx-auto">
+                    How individual crises evolve and interconnect over time, creating cascading effects 
+                    that amplify global instability.
+                </p>
+            </div>
+            
+            <div class="max-w-4xl mx-auto">
+                <div class="space-y-8">
+                    <div class="timeline-item">
+                        <div class="bg-gray-800/50 rounded-lg p-6">
+                            <div class="flex items-center justify-between mb-3">
+                                <h3 class="text-xl font-bold text-blue-400">2022: Initial Trigger</h3>
+                                <span class="bg-red-500/20 text-red-400 px-3 py-1 rounded text-sm">High Impact</span>
+                            </div>
+                            <p class="text-gray-300 mb-3">
+                                Ukraine conflict begins, immediately disrupting global energy and food markets. 
+                                Semiconductor supply chains face unprecedented stress.
+                            </p>
+                            <div class="flex space-x-2">
+                                <span class="bg-gray-700 px-2 py-1 rounded text-xs">Geopolitical</span>
+                                <span class="bg-gray-700 px-2 py-1 rounded text-xs">Economic</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="bg-gray-800/50 rounded-lg p-6">
+                            <div class="flex items-center justify-between mb-3">
+                                <h3 class="text-xl font-bold text-amber-400">2023: Cascade Effects</h3>
+                                <span class="bg-amber-500/20 text-amber-400 px-3 py-1 rounded text-sm">Medium Impact</span>
+                            </div>
+                            <p class="text-gray-300 mb-3">
+                                Energy price spikes trigger inflation worldwide. Sahel region experiences 
+                                increased conflict due to food scarcity and resource competition.
+                            </p>
+                            <div class="flex space-x-2">
+                                <span class="bg-gray-700 px-2 py-1 rounded text-xs">Economic</span>
+                                <span class="bg-gray-700 px-2 py-1 rounded text-xs">Climate</span>
+                                <span class="bg-gray-700 px-2 py-1 rounded text-xs">Migration</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="bg-gray-800/50 rounded-lg p-6">
+                            <div class="flex items-center justify-between mb-3">
+                                <h3 class="text-xl font-bold text-green-400">2024: System Stress</h3>
+                                <span class="bg-red-500/20 text-red-400 px-3 py-1 rounded text-sm">High Impact</span>
+                            </div>
+                            <p class="text-gray-300 mb-3">
+                                Multiple simultaneous crises overwhelm international response capacity. 
+                                Taiwan tensions rise as technology dependencies become critical vulnerabilities.
+                            </p>
+                            <div class="flex space-x-2">
+                                <span class="bg-gray-700 px-2 py-1 rounded text-xs">Technology</span>
+                                <span class="bg-gray-700 px-2 py-1 rounded text-xs">Geopolitical</span>
+                                <span class="bg-gray-700 px-2 py-1 rounded text-xs">Systemic</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="bg-gray-800/50 rounded-lg p-6">
+                            <div class="flex items-center justify-between mb-3">
+                                <h3 class="text-xl font-bold text-purple-400">2025: Critical Juncture</h3>
+                                <span class="bg-red-500/20 text-red-400 px-3 py-1 rounded text-sm">Critical</span>
+                            </div>
+                            <p class="text-gray-300 mb-3">
+                                Current period where intervention opportunities remain viable. 
+                                Systemic cascade risk increases exponentially with each passing month.
+                            </p>
+                            <div class="flex space-x-2">
+                                <span class="bg-gray-700 px-2 py-1 rounded text-xs">All Domains</span>
+                                <span class="bg-gray-700 px-2 py-1 rounded text-xs">Critical Window</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="py-20 bg-black">
+        <div class="max-w-4xl mx-auto px-6 text-center">
+            <div class="bg-gradient-to-r from-blue-500/10 to-amber-500/10 rounded-2xl p-12 border border-blue-500/30">
+                <h2 class="text-4xl font-bold mb-6">Contribute Case Studies</h2>
+                <p class="text-xl text-gray-300 mb-8">
+                    Do you have expertise in a specific crisis situation? Help us expand our case study collection 
+                    with detailed analysis of interconnected crisis dynamics.
+                </p>
+                
+                <div class="grid md:grid-cols-3 gap-8 mb-12">
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-blue-500/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-search text-blue-400 text-2xl"></i>
+                        </div>
+                        <h3 class="text-lg font-semibold mb-2">Regional Expertise</h3>
+                        <p class="text-gray-400 text-sm">Share deep knowledge of specific crisis regions</p>
+                    </div>
+                    
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-amber-500/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-chart-line text-amber-400 text-2xl"></i>
+                        </div>
+                        <h3 class="text-lg font-semibold mb-2">Data Analysis</h3>
+                        <p class="text-gray-400 text-sm">Provide quantitative analysis and metrics</p>
+                    </div>
+                    
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-green-500/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-lightbulb text-green-400 text-2xl"></i>
+                        </div>
+                        <h3 class="text-lg font-semibold mb-2">Intervention Insights</h3>
+                        <p class="text-gray-400 text-sm">Identify high-leverage intervention opportunities</p>
+                    </div>
+                </div>
+                
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="contribute.html" class="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-lg font-semibold transition-all duration-300">
+                        <i class="fas fa-paper-plane mr-2"></i>
+                        Submit Case Study
+                    </a>
+                    <a href="https://github.com/magictreesproductions/global-crisis-2025-2050" target="_blank" class="border border-gray-600 hover:border-gray-400 text-white px-8 py-4 rounded-lg font-semibold transition-all duration-300">
+                        <i class="fab fa-github mr-2"></i>
+                        GitHub Guidelines
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black border-t border-gray-800 py-12">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex flex-col md:flex-row items-center justify-between">
+                <div class="flex items-center space-x-3 mb-4 md:mb-0">
+                    <div class="w-8 h-8 bg-gradient-to-r from-blue-500 to-amber-500 rounded-lg flex items-center justify-center">
+                        <i class="fas fa-globe text-white text-sm"></i>
+                    </div>
+                    <div>
+                        <span class="text-lg font-bold">Global Crisis Analysis</span>
+                        <p class="text-xs text-gray-400">Maintained by @mag00s</p>
+                    </div>
+                </div>
+                
+                <div class="flex items-center space-x-6">
+                    <a href="https://github.com/magictreesproductions/global-crisis-2025-2050" target="_blank" class="text-gray-400 hover:text-white transition-colors">
+                        <i class="fab fa-github text-xl"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                        <i class="fas fa-download text-xl"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                        <i class="fas fa-share-alt text-xl"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Maintainer Info -->
+            <div class="maintainer-info mt-8 pt-8 border-t border-gray-800 text-center">
+                <p class="text-gray-400 text-sm mb-2">
+                    <strong>Project Maintainer:</strong> Anonymous Researcher (@mag00s) - Pseudonymous researcher committed to open, evidence-based analysis of global challenges.
+                </p>
+                <p class="text-gray-400 text-sm mb-4">
+                    Contributors welcome—you may use your real name or remain anonymous. All contributions are licensed under Creative Commons Attribution 4.0 International.
+                </p>
+                <div class="flex justify-center space-x-4 text-sm">
+                    <a href="METHODOLOGY.md" class="text-blue-400 hover:text-blue-300">
+                        <i class="fas fa-file-alt mr-1"></i>
+                        Research Methodology
+                    </a>
+                    <a href="https://github.com/magictreesproductions/global-crisis-2025-2050" target="_blank" class="text-blue-400 hover:text-blue-300">
+                        <i class="fab fa-github mr-1"></i>
+                        GitHub Repository
+                    </a>
+                    <a href="contribute.html" class="text-blue-400 hover:text-blue-300">
+                        <i class="fas fa-users mr-1"></i>
+                        How to Contribute
+                    </a>
+                </div>
+            </div>
+            
+            <div class="mt-8 pt-8 border-t border-gray-800 text-center text-gray-400 text-sm">
+                <p>© 2025 Global Crisis Analysis Project. Open source research for humanity's future.</p>
+                <p class="mt-2">This work is licensed under Creative Commons Attribution 4.0 International</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

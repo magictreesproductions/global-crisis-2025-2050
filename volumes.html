@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Research Volumes - Global Crisis 2025-2050</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        :root {
+            --primary-dark: #0a0a0a;
+            --secondary-dark: #1a1a1a;
+            --accent-dark: #2a2a2a;
+            --text-primary: #ffffff;
+            --text-secondary: #b0b0b0;
+            --accent-blue: #3b82f6;
+            --accent-amber: #f59e0b;
+            --accent-red: #ef4444;
+            --accent-green: #10b981;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--primary-dark);
+            color: var(--text-primary);
+        }
+        
+        .volume-card {
+            background: linear-gradient(145deg, rgba(26, 26, 26, 0.8), rgba(42, 42, 42, 0.6));
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .volume-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+            border-color: var(--accent-blue);
+        }
+        
+        .nav-blur {
+            backdrop-filter: blur(20px);
+            background: rgba(10, 10, 10, 0.8);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 nav-blur border-b border-gray-800">
+        <div class="max-w-7xl mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-3">
+                    <div class="w-8 h-8 bg-gradient-to-r from-blue-500 to-amber-500 rounded-lg flex items-center justify-center">
+                        <i class="fas fa-globe text-white text-sm"></i>
+                    </div>
+                    <h1 class="text-xl font-bold">Global Crisis Analysis</h1>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="text-gray-300 hover:text-white transition-colors">Overview</a>
+                    <a href="volumes.html" class="text-white">Volumes</a>
+                    <a href="scenarios.html" class="text-gray-300 hover:text-white transition-colors">Scenarios</a>
+                    <a href="data.html" class="text-gray-300 hover:text-white transition-colors">Data</a>
+                    <a href="contribute.html" class="text-gray-300 hover:text-white transition-colors">Contribute</a>
+                    <a href="case-studies.html" class="text-gray-300 hover:text-white transition-colors">Case Studies</a>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <a href="https://github.com/magictreesproductions/global-crisis-2025-2050" target="_blank" class="text-gray-300 hover:text-white">
+                        <i class="fab fa-github text-xl"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="pt-32 pb-16 bg-gradient-to-b from-black to-gray-900">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <h1 class="text-5xl font-bold mb-6">Research Volumes</h1>
+            <p class="text-xl text-gray-300 max-w-4xl mx-auto">
+                Six comprehensive volumes analyzing the interconnected nature of global crises, 
+                from geopolitical tensions to systemic intervention strategies.
+            </p>
+        </div>
+    </section>
+
+    <!-- Volumes Grid -->
+    <section class="py-20 bg-black">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid gap-8">
+                <!-- Volume 1 -->
+                <div class="volume-card rounded-2xl p-8">
+                    <div class="grid lg:grid-cols-4 gap-8 items-center">
+                        <div class="lg:col-span-1">
+                            <img src="volume1-geo.png" alt="Geopolitical Crisis" class="w-full h-48 object-cover rounded-xl">
+                        </div>
+                        <div class="lg:col-span-3">
+                            <div class="flex items-center space-x-4 mb-4">
+                                <span class="bg-red-500/20 text-red-400 px-4 py-2 rounded-full font-medium">Volume I</span>
+                                <span class="bg-red-500/30 text-red-300 px-3 py-1 rounded text-sm">Critical Risk</span>
+                                <span class="text-gray-400">59 Conflicts</span>
+                            </div>
+                            <h2 class="text-3xl font-bold mb-4">Geopolitical Crisis Architecture</h2>
+                            <p class="text-gray-300 text-lg mb-6">
+                                Comprehensive analysis of the global conflict landscape with 59 active conflicts, 
+                                proxy warfare networks, and the transformation of international power structures. 
+                                This volume maps escalation pathways and identifies diplomatic intervention opportunities.
+                            </p>
+                            <div class="grid md:grid-cols-2 gap-6 mb-6">
+                                <div>
+                                    <h4 class="font-semibold text-white mb-3">Key Chapters</h4>
+                                    <ul class="space-y-2 text-gray-300">
+                                        <li class="flex items-center"><i class="fas fa-chevron-right text-red-400 mr-2 text-xs"></i>Global Conflict Landscape 2025</li>
+                                        <li class="flex items-center"><i class="fas fa-chevron-right text-red-400 mr-2 text-xs"></i>Proxy Warfare Networks and Financing</li>
+                                        <li class="flex items-center"><i class="fas fa-chevron-right text-red-400 mr-2 text-xs"></i>Resource-Driven Conflicts</li>
+                                        <li class="flex items-center"><i class="fas fa-chevron-right text-red-400 mr-2 text-xs"></i>Regional Hotspot Analysis</li>
+                                        <li class="flex items-center"><i class="fas fa-chevron-right text-red-400 mr-2 text-xs"></i>Power Structure Transformation</li>
+                                        <li class="flex items-center"><i class="fas fa-chevron-right text-red-400 mr-2 text-xs"></i>Intervention Points and Diplomatic Windows</li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-white mb-3">Critical Findings</h4>
+                                    <div class="space-y-3">
+                                        <div class="bg-red-500/10 border border-red-500/30 rounded-lg p-3">
+                                            <div class="text-2xl font-bold text-red-400">59</div>
+                                            <div class="text-sm text-gray-300">Active conflicts worldwide</div>
+                                        </div>
+                                        <div class="bg-red-500/10 border border-red-500/30 rounded-lg p-3">
+                                            <div class="text-2xl font-bold text-red-400">25%</div>
+                                            <div class="text-sm text-gray-300">Increase from 2023-2024</div>
+                                        </div>
+                                        <div class="bg-red-500/10 border border-red-500/30 rounded-lg p-3">
+                                            <div class="text-2xl font-bold text-red-400">Proto-WWIII</div>
+                                            <div class="text-sm text-gray-300">Proxy warfare characterization</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <div class="flex space-x-3">
+                                    <span class="bg-gray-700 px-3 py-1 rounded-full text-sm">Geopolitics</span>
+                                    <span class="bg-gray-700 px-3 py-1 rounded-full text-sm">Conflict Analysis</span>
+                                    <span class="bg-gray-700 px-3 py-1 rounded-full text-sm">Diplomacy</span>
+                                    <span class="bg-gray-700 px-3 py-1 rounded-full text-sm">Security</span>
+                                </div>
+                                <a href="#" class="bg-red-600 hover:bg-red-700 text-white px-6 py-3 rounded-lg font-semibold transition-colors">
+                                    <i class="fas fa-book mr-2"></i>
+                                    Read Volume I
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Volume 2 -->
+                <div class="volume-card rounded-2xl p-8">
+                    <div class="grid lg:grid-cols-4 gap-8 items-center">
+                        <div class="lg:col-span-1">
+                            <img src="volume2-tech.png" alt="Technology Crisis" class="w-full h-48 object-cover rounded-xl">
+                        </div>
+                        <div class="lg:col-span-3">
+                            <div class="flex items-center space-x-4 mb-4">
+                                <span class="bg-blue-500/20 text-blue-400 px-4 py-2 rounded-full font-medium">Volume II</span>
+                                <span class="bg-blue-500/30 text-blue-300 px-3 py-1 rounded text-sm">High Risk</span>
+                                <span class="text-gray-400">300% Growth</span>
+                            </div>
+                            <h2 class="text-3xl font-bold mb-4">Technology Disruption Crisis</h2>
+                            <p class="text-gray-300 text-lg mb-6">
+                                Analysis of AI resource competition, information warfare evolution, and quantum computing threats. 
+                                Examines the timeline for "Harvest Now, Decrypt Later" attacks and algorithm regulation intervention points.
+                            </p>
+                            <div class="grid md:grid-cols-2 gap-6 mb-6">
+                                <div>
+                                    <h4 class="font-semibold text-white mb-3">Key Chapters</h4>
+                                    <ul class="space-y-2 text-gray-300">
+                                        <li class="flex items-center"><i class="fas fa-chevron-right text-blue-400 mr-2 text-xs"></i>AI Resource Competition</li>
+                                        <li class="flex items-center"><i class="fas fa-chevron-right text-blue-400 mr-2 text-xs"></i>Information Warfare Evolution</li>
+                                        <li class="flex items-center"><i class="fas fa-chevron-right text-blue-400 mr-2 text-xs"></i>Quantum Computing Threat Timeline</li>
+                                        <li class="flex items-center"><i class="fas fa-chevron-right text-blue-400 mr-2 text-xs"></i>Algorithm Regulation Intervention Points</li>
+                                        <li class="flex items-center"><i class="fas fa-chevron-right text-blue-400 mr-2 text-xs"></i>Deepfake Detection Technologies</li>
+                                        <li class="flex items-center"><i class="fas fa-chevron-right text-blue-400 mr-2 text-xs"></i>Social Media Manipulation Networks</li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-white mb-3">Critical Metrics</h4>
+                                    <div class="space-y-3">
+                                        <div class="bg-blue-500/10 border border-blue-500/30 rounded-lg p-3">
+                                            <div class="text-2xl font-bold text-blue-400">52.1%</div>
+                                            <div class="text-sm text-gray-300">Annual AI water consumption growth (Texas)</div>
+                                        </div>
+                                        <div class="bg-blue-500/10 border border-blue-500/30 rounded-lg p-3">
+                                            <div class="text-2xl font-bold text-blue-400">300%</div>
+                                            <div class="text-sm text-gray-300">Annual deepfake growth rate</div>
+                                        </div>
+                                        <div class="bg-blue-500/10 border border-blue-500/30 rounded-lg p-3">
+                                            <div class="text-2xl font-bold text-blue-400">2032</div>
+                                            <div class="text-sm text-gray-300">"Harvest Now, Decrypt Later" window</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <div class="flex space-x-3">
+                                    <span class="bg-gray-700 px-3 py-1 rounded-full text-sm">AI Resources</span>
+                                    <span class="bg-gray-700 px-3 py-1 rounded-full text-sm">Information Warfare</span>
+                                    <span class="bg-gray-700 px-3 py-1 rounded-full text-sm">Quantum Computing</span>
+                                    <span class="bg-gray-700 px-3 py-1 rounded-full text-sm">Algorithm Regulation</span>
+                                </div>
+                                <a href="#" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-semibold transition-colors">
+                                    <i class="fas fa-book mr-2"></i>
+                                    Read Volume II
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Volume 3 -->
+                <div class="volume-card rounded-2xl p-8">
+                    <div class="grid lg:grid-cols-4 gap-8 items-center">
+                        <div class="lg:col-span-1">
+                            <img src="volume3-env.png" alt="Environmental Crisis" class="w-full h-48 object-cover rounded-xl">
+                        </div>
+                        <div class="lg:col-span-3">
+                            <div class="flex items-center space-x-4 mb-4">
+                                <span class="bg-green-500/20 text-green-400 px-4 py-2 rounded-full font-medium">Volume III</span>
+                                <span class="bg-green-500/30 text-green-300 px-3 py-1 rounded text-sm">Critical</span>
+                                <span class="text-gray-400">216M Migrants</span>
+                            </div>
+                            <h2 class="text-3xl font-bold mb-4">Environmental & Demographic Pressure</h2>
+                            <p class="text-gray-300 text-lg mb-6">
+                                Climate migration projections, resource scarcity conflicts, and regional vulnerability analysis. 
+                                Examines 216 million climate migrants projected by 2050 and environmental intervention points.
+                            </p>
+                            <div class="grid md:grid-cols-2 gap-6 mb-6">
+                                <div>
+                                    <h4 class="font-semibold text-white mb-3">Key Chapters</h4>
+                                    <ul class="space-y-2 text-gray-300">
+                                        <li class="flex items-center"><i class="fas fa-chevron-right text-green-400 mr-2 text-xs"></i>Climate Migration Crisis</li>
+                                        <li class="flex items-center"><i class="fas fa-chevron-right text-green-400 mr-2 text-xs"></i>Resource Scarcity Conflicts</li>
+                                        <li class="flex items-center"><i class="fas fa-chevron-right text-green-400 mr-2 text-xs"></i>Regional Vulnerability Analysis</li>
+                                        <li class="flex items-center"><i class="fas fa-chevron-right text-green-400 mr-2 text-xs"></i>Water Wars and Food Security</li>
+                                        <li class="flex items-center"><i class="fas fa-chevron-right text-green-400 mr-2 text-xs"></i>Environmental Intervention Points</li>
+                                        <li class="flex items-center"><i class="fas fa-chevron-right text-green-400 mr-2 text-xs"></i>Adaptive Capacity Assessment</li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-white mb-3">Impact Projections</h4>
+                                    <div class="space-y-3">
+                                        <div class="bg-green-500/10 border border-green-500/30 rounded-lg p-3">
+                                            <div class="text-2xl font-bold text-green-400">216M</div>
+                                            <div class="text-sm text-gray-300">Climate migrants by 2050 (World Bank)</div>
+                                        </div>
+                                        <div class="bg-green-500/10 border border-green-500/30 rounded-lg p-3">
+                                            <div class="text-2xl font-bold text-green-400">73-91M</div>
+                                            <div class="text-sm text-gray-300">Climate migrants in 2030s alone</div>
+                                        </div>
+                                        <div class="bg-green-500/10 border border-green-500/30 rounded-lg p-3">
+                                            <div class="text-2xl font-bold text-green-400">3 Hotspots</div>
+                                            <div class="text-sm text-gray-300">Bangladesh, Sahel, Central America</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <div class="flex space-x-3">
+                                    <span class="bg-gray-700 px-3 py-1 rounded-full text-sm">Climate Migration</span>
+                                    <span class="bg-gray-700 px-3 py-1 rounded-full text-sm">Resource Scarcity</span>
+                                    <span class="bg-gray-700 px-3 py-1 rounded-full text-sm">Environmental Security</span>
+                                    <span class="bg-gray-700 px-3 py-1 rounded-full text-sm">Adaptation</span>
+                                </div>
+                                <a href="#" class="bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-lg font-semibold transition-colors">
+                                    <i class="fas fa-book mr-2"></i>
+                                    Read Volume III
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Volume 4 -->
+                <div class="volume-card rounded-2xl p-8">
+                    <div class="grid lg:grid-cols-4 gap-8 items-center">
+                        <div class="lg:col-span-1">
+                            <img src="volume4-econ.png" alt="Economic Crisis" class="w-full h-48 object-cover rounded-xl">
+                        </div>
+                        <div class="lg:col-span-3">
+                            <div class="flex items-center space-x-4 mb-4">
+                                <span class="bg-purple-500/20 text-purple-400 px-4 py-2 rounded-full font-medium">Volume IV</span>
+                                <span class="bg-purple-500/30 text-purple-300 px-3 py-1 rounded text-sm">Structural</span>
+                                <span class="text-gray-400">47% Wealth</span>
+                            </div>
+                            <h2 class="text-3xl font-bold mb-4">Economic & Social Structural Collapse</h2>
+                            <p class="text-gray-300 text-lg mb-6">
+                                Extreme inequality crisis with top 1% owning 47% of global wealth. Analysis of post-consumption economy transition, 
+                                UBI trials and results, and economic intervention strategies.
+                            </p>
+                            <div class="grid md:grid-cols-2 gap-6 mb-6">
+                                <div>
+                                    <h4 class="font-semibold text-white mb-3">Key Chapters</h4>
+                                    <ul class="space-y-2 text-gray-300">
+                                        <li class="flex items-center"><i class="fas fa-chevron-right text-purple-400 mr-2 text-xs"></i>Inequality Crisis Analysis</li>
+                                        <li class="flex items-center"><i class="fas fa-chevron-right text-purple-400 mr-2 text-xs"></i>Post-Consumption Economy Transition</li>
+                                        <li class="flex items-center"><i class="fas fa-chevron-right text-purple-400 mr-2 text-xs"></i>UBI Trials and Results</li>
+                                        <li class="flex items-center"><i class="fas fa-chevron-right text-purple-400 mr-2 text-xs"></i>Economic Intervention Strategies</li>
+                                        <li class="flex items-center"><i class="fas fa-chevron-right text-purple-400 mr-2 text-xs"></i>Wealth Redistribution Mechanisms</li>
+                                        <li class="flex items-center"><i class="fas fa-chevron-right text-purple-400 mr-2 text-xs"></i>Social Cohesion Indicators</li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-white mb-3">Economic Indicators</h4>
+                                    <div class="space-y-3">
+                                        <div class="bg-purple-500/10 border border-purple-500/30 rounded-lg p-3">
+                                            <div class="text-2xl font-bold text-purple-400">47%</div>
+                                            <div class="text-sm text-gray-300">Wealth owned by top 1%</div>
+                                        </div>
+                                        <div class="bg-purple-500/10 border border-purple-500/30 rounded-lg p-3">
+                                            <div class="text-2xl font-bold text-purple-400">4 Trials</div>
+                                            <div class="text-sm text-gray-300">UBI implementations analyzed</div>
+                                        </div>
+                                        <div class="bg-purple-500/10 border border-purple-500/30 rounded-lg p-3">
+                                            <div class="text-2xl font-bold text-purple-400">Post-Growth</div>
+                                            <div class="text-sm text-gray-300">Economic transition requirement</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <div class="flex space-x-3">
+                                    <span class="bg-gray-700 px-3 py-1 rounded-full text-sm">Economic Inequality</span>
+                                    <span class="bg-gray-700 px-3 py-1 rounded-full text-sm">UBI</span>
+                                    <span class="bg-gray-700 px-3 py-1 rounded-full text-sm">Post-Consumption</span>
+                                    <span class="bg-gray-700 px-3 py-1 rounded-full text-sm">Social Structure</span>
+                                </div>
+                                <a href="#" class="bg-purple-600 hover:bg-purple-700 text-white px-6 py-3 rounded-lg font-semibold transition-colors">
+                                    <i class="fas fa-book mr-2"></i>
+                                    Read Volume IV
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Volume 5 -->
+                <div class="volume-card rounded-2xl p-8">
+                    <div class="grid lg:grid-cols-4 gap-8 items-center">
+                        <div class="lg:col-span-1">
+                            <img src="volume5-system.png" alt="Systemic Analysis" class="w-full h-48 object-cover rounded-xl">
+                        </div>
+                        <div class="lg:col-span-3">
+                            <div class="flex items-center space-x-4 mb-4">
+                                <span class="bg-amber-500/20 text-amber-400 px-4 py-2 rounded-full font-medium">Volume V</span>
+                                <span class="bg-amber-500/30 text-amber-300 px-3 py-1 rounded text-sm">Network</span>
+                                <span class="text-gray-400">40+ Nodes</span>
+                            </div>
+                            <h2 class="text-3xl font-bold mb-4">Systemic Interconnection Analysis</h2>
+                            <p class="text-gray-300 text-lg mb-6">
+                                Crisis network mapping with 40+ nodes and interconnections. Identifies acceleration patterns, 
+                                tipping points, and high-leverage intervention points for systemic transformation.
+                            </p>
+                            <div class="grid md:grid-cols-2 gap-6 mb-6">
+                                <div>
+                                    <h4 class="font-semibold text-white mb-3">Key Chapters</h4>
+                                    <ul class="space-y-2 text-gray-300">
+                                        <li class="flex items-center"><i class="fas fa-chevron-right text-amber-400 mr-2 text-xs"></i>Crisis Network Mapping</li>
+                                        <li class="flex items-center"><i class="fas fa-chevron-right text-amber-400 mr-2 text-xs"></i>Acceleration Patterns</li>
+                                        <li class="flex items-center"><i class="fas fa-chevron-right text-amber-400 mr-2 text-xs"></i>Tipping Point Identification</li>
+                                        <li class="flex items-center"><i class="fas fa-chevron-right text-amber-400 mr-2 text-xs"></i>Systemic Risk Assessment</li>
+                                        <li class="flex items-center"><i class="fas fa-chevron-right text-amber-400 mr-2 text-xs"></i>High-Leverage Intervention Points</li>
+                                        <li class="flex items-center"><i class="fas fa-chevron-right text-amber-400 mr-2 text-xs"></i>Cascade Modeling</li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-white mb-3">Systemic Metrics</h4>
+                                    <div class="space-y-3">
+                                        <div class="bg-amber-500/10 border border-amber-500/30 rounded-lg p-3">
+                                            <div class="text-2xl font-bold text-amber-400">66.2/100</div>
+                                            <div class="text-sm text-gray-300">Information warfare risk score</div>
+                                        </div>
+                                        <div class="bg-amber-500/10 border border-amber-500/30 rounded-lg p-3">
+                                            <div class="text-2xl font-bold text-amber-400">40+</div>
+                                            <div class="text-sm text-gray-300">Network nodes mapped</div>
+                                        </div>
+                                        <div class="bg-amber-500/10 border border-amber-500/30 rounded-lg p-3">
+                                            <div class="text-2xl font-bold text-amber-400">12</div>
+                                            <div class="text-sm text-gray-300">High-leverage interventions</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <div class="flex space-x-3">
+                                    <span class="bg-gray-700 px-3 py-1 rounded-full text-sm">Network Analysis</span>
+                                    <span class="bg-gray-700 px-3 py-1 rounded-full text-sm">System Dynamics</span>
+                                    <span class="bg-gray-700 px-3 py-1 rounded-full text-sm">Cascade Effects</span>
+                                    <span class="bg-gray-700 px-3 py-1 rounded-full text-sm">Interventions</span>
+                                </div>
+                                <a href="#" class="bg-amber-600 hover:bg-amber-700 text-white px-6 py-3 rounded-lg font-semibold transition-colors">
+                                    <i class="fas fa-book mr-2"></i>
+                                    Read Volume V
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Volume 6 -->
+                <div class="volume-card rounded-2xl p-8">
+                    <div class="grid lg:grid-cols-4 gap-8 items-center">
+                        <div class="lg:col-span-1">
+                            <img src="volume6-scenarios.png" alt="Future Scenarios" class="w-full h-48 object-cover rounded-xl">
+                        </div>
+                        <div class="lg:col-span-3">
+                            <div class="flex items-center space-x-4 mb-4">
+                                <span class="bg-cyan-500/20 text-cyan-400 px-4 py-2 rounded-full font-medium">Volume VI</span>
+                                <span class="bg-cyan-500/30 text-cyan-300 px-3 py-1 rounded text-sm">Strategic</span>
+                                <span class="text-gray-400">3 Scenarios</span>
+                            </div>
+                            <h2 class="text-3xl font-bold mb-4">Scenario Pathways & Strategic Interventions</h2>
+                            <p class="text-gray-300 text-lg mb-6">
+                                Three future scenarios with implementation pathways and 12 high-leverage intervention points. 
+                                Provides differentiated policy recommendations by actor and region for 2025-2050.
+                            </p>
+                            <div class="grid md:grid-cols-2 gap-6 mb-6">
+                                <div>
+                                    <h4 class="font-semibold text-white mb-3">Key Chapters</h4>
+                                    <ul class="space-y-2 text-gray-300">
+                                        <li class="flex items-center"><i class="fas fa-chevron-right text-cyan-400 mr-2 text-xs"></i>Three Future Scenarios</li>
+                                        <li class="flex items-center"><i class="fas fa-chevron-right text-cyan-400 mr-2 text-xs"></i>Strategic Intervention Points</li>
+                                        <li class="flex items-center"><i class="fas fa-chevron-right text-cyan-400 mr-2 text-xs"></i>Implementation Timeline</li>
+                                        <li class="flex items-center"><i class="fas fa-chevron-right text-cyan-400 mr-2 text-xs"></i>Policy Recommendations by Actor</li>
+                                        <li class="flex items-center"><i class="fas fa-chevron-right text-cyan-400 mr-2 text-xs"></i>Regional Implementation Strategies</li>
+                                        <li class="flex items-center"><i class="fas fa-chevron-right text-cyan-400 mr-2 text-xs"></i>Early Warning Indicators</li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-white mb-3">Scenario Probabilities</h4>
+                                    <div class="space-y-3">
+                                        <div class="bg-green-500/10 border border-green-500/30 rounded-lg p-3">
+                                            <div class="text-2xl font-bold text-green-400">25%</div>
+                                            <div class="text-sm text-gray-300">Star Trek Scenario</div>
+                                        </div>
+                                        <div class="bg-amber-500/10 border border-amber-500/30 rounded-lg p-3">
+                                            <div class="text-2xl font-bold text-amber-400">35%</div>
+                                            <div class="text-sm text-gray-300">Equilibrium Terror</div>
+                                        </div>
+                                        <div class="bg-red-500/10 border border-red-500/30 rounded-lg p-3">
+                                            <div class="text-2xl font-bold text-red-400">40%</div>
+                                            <div class="text-sm text-gray-300">Mad Max Scenario</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <div class="flex space-x-3">
+                                    <span class="bg-gray-700 px-3 py-1 rounded-full text-sm">Scenario Planning</span>
+                                    <span class="bg-gray-700 px-3 py-1 rounded-full text-sm">Strategic Interventions</span>
+                                    <span class="bg-gray-700 px-3 py-1 rounded-full text-sm">Implementation</span>
+                                    <span class="bg-gray-700 px-3 py-1 rounded-full text-sm">Policy</span>
+                                </div>
+                                <a href="#" class="bg-cyan-600 hover:bg-cyan-700 text-white px-6 py-3 rounded-lg font-semibold transition-colors">
+                                    <i class="fas fa-book mr-2"></i>
+                                    Read Volume VI
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="py-20 bg-gradient-to-b from-black to-gray-900">
+        <div class="max-w-4xl mx-auto px-6 text-center">
+            <div class="bg-gradient-to-r from-blue-500/10 to-amber-500/10 rounded-2xl p-12 border border-blue-500/30">
+                <h2 class="text-4xl font-bold mb-6">Access the Complete Research</h2>
+                <p class="text-xl text-gray-300 mb-8">
+                    All six volumes are available for download and collaborative development. 
+                    Join the research community working on solutions to these critical challenges.
+                </p>
+                
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="https://github.com/magictreesproductions/global-crisis-2025-2050" target="_blank" class="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-lg font-semibold transition-all duration-300">
+                        <i class="fab fa-github mr-2"></i>
+                        Download from GitHub
+                    </a>
+                    <a href="contribute.html" class="border border-gray-600 hover:border-gray-400 text-white px-8 py-4 rounded-lg font-semibold transition-all duration-300">
+                        <i class="fas fa-users mr-2"></i>
+                        Join Research Community
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black border-t border-gray-800 py-12">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex flex-col md:flex-row items-center justify-between">
+                <div class="flex items-center space-x-3 mb-4 md:mb-0">
+                    <div class="w-8 h-8 bg-gradient-to-r from-blue-500 to-amber-500 rounded-lg flex items-center justify-center">
+                        <i class="fas fa-globe text-white text-sm"></i>
+                    </div>
+                    <span class="text-lg font-bold">Global Crisis Analysis</span>
+                </div>
+                
+                <div class="flex items-center space-x-6">
+                    <a href="https://github.com/magictreesproductions/global-crisis-2025-2050" target="_blank" class="text-gray-400 hover:text-white transition-colors">
+                        <i class="fab fa-github text-xl"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                        <i class="fas fa-download text-xl"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                        <i class="fas fa-share-alt text-xl"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="mt-8 pt-8 border-t border-gray-800 text-center text-gray-400 text-sm">
+                <p>© 2025 Global Crisis Analysis Project. Open source research for humanity's future.</p>
+                <p class="mt-2">This work is licensed under Creative Commons Attribution 4.0 International</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

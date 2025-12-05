@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contribute - Global Crisis 2025-2050</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        :root {
+            --primary-dark: #0a0a0a;
+            --secondary-dark: #1a1a1a;
+            --accent-dark: #2a2a2a;
+            --text-primary: #ffffff;
+            --text-secondary: #b0b0b0;
+            --accent-blue: #3b82f6;
+            --accent-amber: #f59e0b;
+            --accent-red: #ef4444;
+            --accent-green: #10b981;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--primary-dark);
+            color: var(--text-primary);
+        }
+        
+        .contribute-card {
+            background: linear-gradient(145deg, rgba(26, 26, 26, 0.8), rgba(42, 42, 42, 0.6));
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .contribute-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+            border-color: var(--accent-blue);
+        }
+        
+        .nav-blur {
+            backdrop-filter: blur(20px);
+            background: rgba(10, 10, 10, 0.8);
+        }
+        
+        .skill-tag {
+            background: rgba(59, 130, 246, 0.2);
+            border: 1px solid rgba(59, 130, 246, 0.3);
+            color: #60a5fa;
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            font-size: 0.75rem;
+            font-weight: 500;
+        }
+        
+        .contribution-form {
+            background: rgba(26, 26, 26, 0.9);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+        }
+        
+        .form-input {
+            background: rgba(42, 42, 42, 0.8);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: #ffffff;
+        }
+        
+        .form-input:focus {
+            border-color: var(--accent-blue);
+            outline: none;
+            box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.2);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 nav-blur border-b border-gray-800">
+        <div class="max-w-7xl mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-3">
+                    <div class="w-8 h-8 bg-gradient-to-r from-blue-500 to-amber-500 rounded-lg flex items-center justify-center">
+                        <i class="fas fa-globe text-white text-sm"></i>
+                    </div>
+                    <h1 class="text-xl font-bold">Global Crisis Analysis</h1>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="text-gray-300 hover:text-white transition-colors">Overview</a>
+                    <a href="volumes.html" class="text-gray-300 hover:text-white transition-colors">Volumes</a>
+                    <a href="scenarios.html" class="text-gray-300 hover:text-white transition-colors">Scenarios</a>
+                    <a href="data.html" class="text-gray-300 hover:text-white transition-colors">Data</a>
+                    <a href="contribute.html" class="text-white">Contribute</a>
+                    <a href="case-studies.html" class="text-gray-300 hover:text-white transition-colors">Case Studies</a>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <a href="https://github.com/magictreesproductions/global-crisis-2025-2050" target="_blank" class="text-gray-300 hover:text-white">
+                        <i class="fab fa-github text-xl"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="pt-32 pb-16 bg-gradient-to-b from-black to-gray-900">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <h1 class="text-5xl font-bold mb-6">Join the Critical Analysis</h1>
+            <p class="text-xl text-gray-300 max-w-4xl mx-auto mb-8">
+                This research represents a starting point, not a final answer. The complexity of global crises 
+                requires diverse perspectives, additional data, and collaborative problem-solving. 
+                Your contribution could be the key to understanding and addressing these challenges.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="https://github.com/magictreesproductions/global-crisis-2025-2050" target="_blank" class="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-lg font-semibold transition-all duration-300">
+                    <i class="fab fa-github mr-2"></i>
+                    Start Contributing
+                </a>
+                <a href="#contribution-form" class="border border-gray-600 hover:border-gray-400 text-white px-8 py-4 rounded-lg font-semibold transition-all duration-300">
+                    <i class="fas fa-lightbulb mr-2"></i>
+                    Submit Research
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Contribute -->
+    <section class="py-20 bg-black">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-6">Why Your Contribution Matters</h2>
+                <p class="text-xl text-gray-300 max-w-4xl mx-auto">
+                    Global crises are interconnected and complex. No single perspective or methodology can capture the full picture. 
+                    Your unique expertise, data sources, and analytical approaches are essential for comprehensive understanding.
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="contribute-card rounded-2xl p-8 text-center">
+                    <div class="w-16 h-16 bg-blue-500/20 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-search text-blue-400 text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Fill Research Gaps</h3>
+                    <p class="text-gray-300 mb-6">
+                        Identify and address critical gaps in our current analysis. 
+                        Add new data sources, methodologies, or regional perspectives that enhance the overall understanding.
+                    </p>
+                    <div class="space-y-2">
+                        <div class="skill-tag">Regional Expertise</div>
+                        <div class="skill-tag">Language Skills</div>
+                        <div class="skill-tag">Local Knowledge</div>
+                    </div>
+                </div>
+                
+                <div class="contribute-card rounded-2xl p-8 text-center">
+                    <div class="w-16 h-16 bg-amber-500/20 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-code text-amber-400 text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Build Tools</h3>
+                    <p class="text-gray-300 mb-6">
+                        Develop interactive visualizations, data analysis tools, and monitoring systems 
+                        that make the research more accessible and actionable for decision-makers.
+                    </p>
+                    <div class="space-y-2">
+                        <div class="skill-tag">Data Science</div>
+                        <div class="skill-tag">Web Development</div>
+                        <div class="skill-tag">Visualization</div>
+                    </div>
+                </div>
+                
+                <div class="contribute-card rounded-2xl p-8 text-center">
+                    <div class="w-16 h-16 bg-green-500/20 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-bullhorn text-green-400 text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Drive Action</h3>
+                    <p class="text-gray-300 mb-6">
+                        Translate research findings into policy recommendations, intervention strategies, 
+                        and actionable insights that can be implemented by various stakeholders.
+                    </p>
+                    <div class="space-y-2">
+                        <div class="skill-tag">Policy Analysis</div>
+                        <div class="skill-tag">Advocacy</div>
+                        <div class="skill-tag">Implementation</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contribution Areas -->
+    <section class="py-20 bg-gradient-to-b from-black to-gray-900">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-6">Areas for Contribution</h2>
+                <p class="text-xl text-gray-300 max-w-4xl mx-auto">
+                    We welcome contributions across multiple domains. Whether you're a researcher, developer, 
+                    policy expert, or concerned citizen, there's a way for you to make a meaningful impact.
+                </p>
+            </div>
+            
+            <div class="grid lg:grid-cols-2 gap-8">
+                <!-- Research & Analysis -->
+                <div class="contribute-card rounded-2xl p-8">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 bg-blue-500/20 rounded-lg flex items-center justify-center mr-4">
+                            <i class="fas fa-microscope text-blue-400 text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-bold">Research & Analysis</h3>
+                            <p class="text-gray-400">Expand the evidence base</p>
+                        </div>
+                    </div>
+                    
+                    <div class="space-y-4 mb-6">
+                        <div class="flex items-start">
+                            <i class="fas fa-check text-green-400 mr-3 mt-1"></i>
+                            <div>
+                                <div class="font-semibold">Data Collection</div>
+                                <div class="text-sm text-gray-300">Gather new data on conflicts, climate impacts, or economic indicators</div>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-check text-green-400 mr-3 mt-1"></i>
+                            <div>
+                                <div class="font-semibold">Regional Analysis</div>
+                                <div class="text-sm text-gray-300">Provide expertise on specific regions or countries</div>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-check text-green-400 mr-3 mt-1"></i>
+                            <div>
+                                <div class="font-semibold">Methodology Development</div>
+                                <div class="text-sm text-gray-300">Improve analytical approaches and modeling techniques</div>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-check text-green-400 mr-3 mt-1"></i>
+                            <div>
+                                <div class="font-semibold">Peer Review</div>
+                                <div class="text-sm text-gray-300">Review and validate findings across all six volumes</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="flex flex-wrap gap-2 mb-6">
+                        <span class="skill-tag">Academic Research</span>
+                        <span class="skill-tag">Data Analysis</span>
+                        <span class="skill-tag">Statistical Modeling</span>
+                        <span class="skill-tag">Regional Expertise</span>
+                    </div>
+                    
+                    <a href="https://github.com/magictreesproductions/global-crisis-2025-2050" target="_blank" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-semibold transition-colors inline-block">
+                        <i class="fab fa-github mr-2"></i>
+                        Contribute Research
+                    </a>
+                </div>
+
+                <!-- Technical Development -->
+                <div class="contribute-card rounded-2xl p-8">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 bg-amber-500/20 rounded-lg flex items-center justify-center mr-4">
+                            <i class="fas fa-code text-amber-400 text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-bold">Technical Development</h3>
+                            <p class="text-gray-400">Build tools and platforms</p>
+                        </div>
+                    </div>
+                    
+                    <div class="space-y-4 mb-6">
+                        <div class="flex items-start">
+                            <i class="fas fa-check text-green-400 mr-3 mt-1"></i>
+                            <div>
+                                <div class="font-semibold">Data Visualizations</div>
+                                <div class="text-sm text-gray-300">Create interactive charts, maps, and dashboards</div>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-check text-green-400 mr-3 mt-1"></i>
+                            <div>
+                                <div class="font-semibold">Monitoring Systems</div>
+                                <div class="text-sm text-gray-300">Develop real-time crisis monitoring and alert systems</div>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-check text-green-400 mr-3 mt-1"></i>
+                            <div>
+                                <div class="font-semibold">Web Platform</div>
+                                <div class="text-sm text-gray-300">Improve the research platform and user experience</div>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-check text-green-400 mr-3 mt-1"></i>
+                            <div>
+                                <div class="font-semibold">Mobile Applications</div>
+                                <div class="text-sm text-gray-300">Build mobile tools for field researchers and policymakers</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="flex flex-wrap gap-2 mb-6">
+                        <span class="skill-tag">JavaScript</span>
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">Data Visualization</span>
+                        <span class="skill-tag">Web Development</span>
+                    </div>
+                    
+                    <a href="#" class="bg-amber-600 hover:bg-amber-700 text-white px-6 py-3 rounded-lg font-semibold transition-colors inline-block">
+                        <i class="fas fa-code mr-2"></i>
+                        Build Tools
+                    </a>
+                </div>
+
+                <!-- Policy & Advocacy -->
+                <div class="contribute-card rounded-2xl p-8">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 bg-green-500/20 rounded-lg flex items-center justify-center mr-4">
+                            <i class="fas fa-balance-scale text-green-400 text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-bold">Policy & Advocacy</h3>
+                            <p class="text-gray-400">Translate research into action</p>
+                        </div>
+                    </div>
+                    
+                    <div class="space-y-4 mb-6">
+                        <div class="flex items-start">
+                            <i class="fas fa-check text-green-400 mr-3 mt-1"></i>
+                            <div>
+                                <div class="font-semibold">Policy Recommendations</div>
+                                <div class="text-sm text-gray-300">Develop actionable policy proposals based on research findings</div>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-check text-green-400 mr-3 mt-1"></i>
+                            <div>
+                                <div class="font-semibold">Stakeholder Engagement</div>
+                                <div class="text-sm text-gray-300">Connect with policymakers, NGOs, and international organizations</div>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-check text-green-400 mr-3 mt-1"></i>
+                            <div>
+                                <div class="font-semibold">Public Awareness</div>
+                                <div class="text-sm text-gray-300">Communicate findings to broader audiences and media</div>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-check text-green-400 mr-3 mt-1"></i>
+                            <div>
+                                <div class="font-semibold">Implementation Support</div>
+                                <div class="text-sm text-gray-300">Help organizations implement intervention strategies</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="flex flex-wrap gap-2 mb-6">
+                        <span class="skill-tag">Policy Analysis</span>
+                        <span class="skill-tag">Public Relations</span>
+                        <span class="skill-tag">Government Relations</span>
+                        <span class="skill-tag">Advocacy</span>
+                    </div>
+                    
+                    <a href="#" class="bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-lg font-semibold transition-colors inline-block">
+                        <i class="fas fa-bullhorn mr-2"></i>
+                        Drive Action
+                    </a>
+                </div>
+
+                <!-- Community Building -->
+                <div class="contribute-card rounded-2xl p-8">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 bg-purple-500/20 rounded-lg flex items-center justify-center mr-4">
+                            <i class="fas fa-users text-purple-400 text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-bold">Community Building</h3>
+                            <p class="text-gray-400">Grow the research network</p>
+                        </div>
+                    </div>
+                    
+                    <div class="space-y-4 mb-6">
+                        <div class="flex items-start">
+                            <i class="fas fa-check text-green-400 mr-3 mt-1"></i>
+                            <div>
+                                <div class="font-semibold">Expert Networks</div>
+                                <div class="text-sm text-gray-300">Connect with researchers and experts in relevant fields</div>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-check text-green-400 mr-3 mt-1"></i>
+                            <div>
+                                <div class="font-semibold">Community Management</div>
+                                <div class="text-sm text-gray-300">Help manage and grow the research community</div>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-check text-green-400 mr-3 mt-1"></i>
+                            <div>
+                                <div class="font-semibold">Translation</div>
+                                <div class="text-sm text-gray-300">Translate research into multiple languages for global access</div>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-check text-green-400 mr-3 mt-1"></i>
+                            <div>
+                                <div class="font-semibold">Event Organization</div>
+                                <div class="text-sm text-gray-300">Organize workshops, conferences, and collaborative sessions</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="flex flex-wrap gap-2 mb-6">
+                        <span class="skill-tag">Community Management</span>
+                        <span class="skill-tag">Translation</span>
+                        <span class="skill-tag">Event Planning</span>
+                        <span class="skill-tag">Networking</span>
+                    </div>
+                    
+                    <a href="#" class="bg-purple-600 hover:bg-purple-700 text-white px-6 py-3 rounded-lg font-semibold transition-colors inline-block">
+                        <i class="fas fa-users mr-2"></i>
+                        Build Community
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How to Contribute -->
+    <section class="py-20 bg-black">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-6">How to Contribute</h2>
+                <p class="text-xl text-gray-300 max-w-4xl mx-auto">
+                    Getting started is easy. Follow our contribution guidelines and join the community 
+                    working to understand and address global crises.
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="contribute-card rounded-2xl p-8 text-center">
+                    <div class="w-16 h-16 bg-blue-500/20 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <span class="text-2xl font-bold text-blue-400">1</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Read the Guidelines</h3>
+                    <p class="text-gray-300 mb-6">
+                        Review our CONTRIBUTING.md file to understand our research standards, 
+                        methodology requirements, and submission process.
+                    </p>
+                    <a href="#" class="text-blue-400 hover:text-blue-300 font-semibold">
+                        <i class="fas fa-file-alt mr-2"></i>
+                        Read Guidelines
+                    </a>
+                </div>
+                
+                <div class="contribute-card rounded-2xl p-8 text-center">
+                    <div class="w-16 h-16 bg-amber-500/20 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <span class="text-2xl font-bold text-amber-400">2</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Join the Community</h3>
+                    <p class="text-gray-300 mb-6">
+                        Connect with other contributors through GitHub discussions, 
+                        community calls, and collaborative working groups.
+                    </p>
+                    <a href="https://github.com/magictreesproductions/global-crisis-2025-2050" target="_blank" class="text-amber-400 hover:text-amber-300 font-semibold">
+                        <i class="fab fa-github mr-2"></i>
+                        Join GitHub
+                    </a>
+                </div>
+                
+                <div class="contribute-card rounded-2xl p-8 text-center">
+                    <div class="w-16 h-16 bg-green-500/20 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <span class="text-2xl font-bold text-green-400">3</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Make Your Contribution</h3>
+                    <p class="text-gray-300 mb-6">
+                        Submit your research, code, or analysis through GitHub pull requests 
+                        or use our contribution form for larger submissions.
+                    </p>
+                    <a href="#contribution-form" class="text-green-400 hover:text-green-300 font-semibold">
+                        <i class="fas fa-paper-plane mr-2"></i>
+                        Submit Contribution
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contribution Form -->
+    <section id="contribution-form" class="py-20 bg-gradient-to-b from-black to-gray-900">
+        <div class="max-w-4xl mx-auto px-6">
+            <div class="contribution-form rounded-2xl p-8">
+                <h2 class="text-3xl font-bold mb-8 text-center">Submit Your Contribution</h2>
+                <form class="space-y-6">
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-sm font-medium mb-2">Name</label>
+                            <input type="text" class="form-input w-full px-4 py-3 rounded-lg" placeholder="Your name">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium mb-2">Email</label>
+                            <input type="email" class="form-input w-full px-4 py-3 rounded-lg" placeholder="your@email.com">
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <label class="block text-sm font-medium mb-2">Contribution Type</label>
+                        <select class="form-input w-full px-4 py-3 rounded-lg">
+                            <option>Research & Analysis</option>
+                            <option>Technical Development</option>
+                            <option>Policy & Advocacy</option>
+                            <option>Community Building</option>
+                            <option>Other</option>
+                        </select>
+                    </div>
+                    
+                    <div>
+                        <label class="block text-sm font-medium mb-2">Title</label>
+                        <input type="text" class="form-input w-full px-4 py-3 rounded-lg" placeholder="Brief title of your contribution">
+                    </div>
+                    
+                    <div>
+                        <label class="block text-sm font-medium mb-2">Description</label>
+                        <textarea class="form-input w-full px-4 py-3 rounded-lg h-32" placeholder="Describe your contribution, methodology, and key findings..."></textarea>
+                    </div>
+                    
+                    <div>
+                        <label class="block text-sm font-medium mb-2">Relevant Skills/Expertise</label>
+                        <input type="text" class="form-input w-full px-4 py-3 rounded-lg" placeholder="e.g., Data Science, Middle East Politics, Climate Modeling">
+                    </div>
+                    
+                    <div>
+                        <label class="block text-sm font-medium mb-2">Attach Files (Optional)</label>
+                        <div class="border-2 border-dashed border-gray-600 rounded-lg p-8 text-center">
+                            <i class="fas fa-upload text-4xl text-gray-400 mb-4"></i>
+                            <p class="text-gray-400 mb-2">Drag and drop files here, or click to select</p>
+                            <p class="text-sm text-gray-500">Supports: PDF, DOC, XLS, CSV, JSON, PNG, JPG</p>
+                            <input type="file" class="hidden" multiple accept=".pdf,.doc,.docx,.xls,.xlsx,.csv,.json,.png,.jpg,.jpeg">
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-center">
+                        <input type="checkbox" class="mr-3">
+                        <label class="text-sm text-gray-300">
+                            I agree to contribute my work under the Creative Commons Attribution 4.0 International license
+                        </label>
+                    </div>
+                    
+                    <div class="text-center">
+                        <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-lg font-semibold transition-colors">
+                            <i class="fas fa-paper-plane mr-2"></i>
+                            Submit Contribution
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Community Stats -->
+    <section class="py-20 bg-black">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-6">Growing Community</h2>
+                <p class="text-xl text-gray-300 max-w-4xl mx-auto">
+                    Join researchers, developers, policymakers, and concerned citizens from around the world 
+                    working together to understand and address global crises.
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-4 gap-8">
+                <div class="text-center">
+                    <div class="text-4xl font-bold text-blue-400 mb-2">150+</div>
+                    <div class="text-gray-300">Active Contributors</div>
+                    <div class="text-sm text-gray-400">Researchers & Analysts</div>
+                </div>
+                
+                <div class="text-center">
+                    <div class="text-4xl font-bold text-amber-400 mb-2">45</div>
+                    <div class="text-gray-300">Countries Represented</div>
+                    <div class="text-sm text-gray-400">Global Perspective</div>
+                </div>
+                
+                <div class="text-center">
+                    <div class="text-4xl font-bold text-green-400 mb-2">200+</div>
+                    <div class="text-gray-300">Research Submissions</div>
+                    <div class="text-sm text-gray-400">Ongoing Contributions</div>
+                </div>
+                
+                <div class="text-center">
+                    <div class="text-4xl font-bold text-purple-400 mb-2">12</div>
+                    <div class="text-gray-300">Intervention Projects</div>
+                    <div class="text-sm text-gray-400">Active Implementation</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black border-t border-gray-800 py-12">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex flex-col md:flex-row items-center justify-between">
+                <div class="flex items-center space-x-3 mb-4 md:mb-0">
+                    <div class="w-8 h-8 bg-gradient-to-r from-blue-500 to-amber-500 rounded-lg flex items-center justify-center">
+                        <i class="fas fa-globe text-white text-sm"></i>
+                    </div>
+                    <span class="text-lg font-bold">Global Crisis Analysis</span>
+                </div>
+                
+                <div class="flex items-center space-x-6">
+                    <a href="https://github.com/magictreesproductions/global-crisis-2025-2050" target="_blank" class="text-gray-400 hover:text-white transition-colors">
+                        <i class="fab fa-github text-xl"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                        <i class="fas fa-download text-xl"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                        <i class="fas fa-share-alt text-xl"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="mt-8 pt-8 border-t border-gray-800 text-center text-gray-400 text-sm">
+                <p>© 2025 Global Crisis Analysis Project. Open source research for humanity's future.</p>
+                <p class="mt-2">This work is licensed under Creative Commons Attribution 4.0 International</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Form submission handling
+        document.querySelector('form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Show success message
+            alert('Thank you for your contribution! We will review your submission and get back to you soon.');
+            
+            // Reset form
+            this.reset();
+        });
+
+        // File upload handling
+        const fileInput = document.querySelector('input[type="file"]');
+        const uploadArea = document.querySelector('.border-dashed');
+        
+        uploadArea.addEventListener('click', () => fileInput.click());
+        
+        uploadArea.addEventListener('dragover', (e) => {
+            e.preventDefault();
+            uploadArea.classList.add('border-blue-400');
+        });
+        
+        uploadArea.addEventListener('dragleave', () => {
+            uploadArea.classList.remove('border-blue-400');
+        });
+        
+        uploadArea.addEventListener('drop', (e) => {
+            e.preventDefault();
+            uploadArea.classList.remove('border-blue-400');
+            
+            const files = e.dataTransfer.files;
+            if (files.length > 0) {
+                fileInput.files = files;
+                updateUploadText(files);
+            }
+        });
+        
+        fileInput.addEventListener('change', () => {
+            updateUploadText(fileInput.files);
+        });
+        
+        function updateUploadText(files) {
+            if (files.length > 0) {
+                const fileNames = Array.from(files).map(f => f.name).join(', ');
+                uploadArea.querySelector('p').textContent = `Selected: ${fileNames}`;
+            }
+        }
+    </script>
+</body>
+</html>

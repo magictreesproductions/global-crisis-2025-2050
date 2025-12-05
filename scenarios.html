@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Future Scenarios - Global Crisis 2025-2050</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        :root {
+            --primary-dark: #0a0a0a;
+            --secondary-dark: #1a1a1a;
+            --accent-dark: #2a2a2a;
+            --text-primary: #ffffff;
+            --text-secondary: #b0b0b0;
+            --accent-blue: #3b82f6;
+            --accent-amber: #f59e0b;
+            --accent-red: #ef4444;
+            --accent-green: #10b981;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--primary-dark);
+            color: var(--text-primary);
+        }
+        
+        .scenario-card {
+            background: linear-gradient(145deg, rgba(26, 26, 26, 0.8), rgba(42, 42, 42, 0.6));
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .scenario-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+        }
+        
+        .nav-blur {
+            backdrop-filter: blur(20px);
+            background: rgba(10, 10, 10, 0.8);
+        }
+        
+        .timeline-item {
+            position: relative;
+            padding-left: 2rem;
+        }
+        
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0.5rem;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: var(--accent-blue);
+        }
+        
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            left: 5px;
+            top: 1.25rem;
+            width: 2px;
+            height: calc(100% - 1rem);
+            background: rgba(59, 130, 246, 0.3);
+        }
+        
+        .timeline-item:last-child::after {
+            display: none;
+        }
+        
+        .probability-indicator {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            position: relative;
+        }
+        
+        .probability-indicator::before {
+            content: '';
+            position: absolute;
+            inset: -4px;
+            border-radius: 50%;
+            background: conic-gradient(from 0deg, transparent, currentColor);
+            z-index: -1;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 nav-blur border-b border-gray-800">
+        <div class="max-w-7xl mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-3">
+                    <div class="w-8 h-8 bg-gradient-to-r from-blue-500 to-amber-500 rounded-lg flex items-center justify-center">
+                        <i class="fas fa-globe text-white text-sm"></i>
+                    </div>
+                    <h1 class="text-xl font-bold">Global Crisis Analysis</h1>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="text-gray-300 hover:text-white transition-colors">Overview</a>
+                    <a href="volumes.html" class="text-gray-300 hover:text-white transition-colors">Volumes</a>
+                    <a href="scenarios.html" class="text-white">Scenarios</a>
+                    <a href="data.html" class="text-gray-300 hover:text-white transition-colors">Data</a>
+                    <a href="contribute.html" class="text-gray-300 hover:text-white transition-colors">Contribute</a>
+                    <a href="case-studies.html" class="text-gray-300 hover:text-white transition-colors">Case Studies</a>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <a href="https://github.com/magictreesproductions/global-crisis-2025-2050" target="_blank" class="text-gray-300 hover:text-white">
+                        <i class="fab fa-github text-xl"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="pt-32 pb-16 bg-gradient-to-b from-black to-gray-900">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <h1 class="text-5xl font-bold mb-6">Three Future Scenarios</h1>
+            <p class="text-xl text-gray-300 max-w-4xl mx-auto mb-8">
+                Based on comprehensive analysis of interconnected global crises, humanity faces three primary pathways forward. 
+                The choices we make in the next 2-5 years will determine which scenario unfolds.
+            </p>
+            <div class="relative">
+                <img src="scenario-forks.png" alt="Future Scenarios" class="w-full max-w-4xl mx-auto h-auto rounded-2xl opacity-90">
+                <div class="absolute inset-0 flex items-center justify-center">
+                    <div class="bg-black/90 backdrop-blur-sm rounded-xl p-6 text-center">
+                        <h3 class="text-xl font-bold mb-2">The Great Divergence</h3>
+                        <p class="text-gray-300 text-sm">Three possible futures await humanity</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Scenario Overview -->
+    <section class="py-20 bg-black">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid lg:grid-cols-3 gap-8">
+                <!-- Star Trek Scenario -->
+                <div class="scenario-card rounded-2xl p-8 border border-green-500/30">
+                    <div class="text-center mb-8">
+                        <div class="probability-indicator bg-green-500/20 text-green-400 border-4 border-green-500/50 mx-auto mb-4">
+                            25%
+                        </div>
+                        <div class="w-16 h-16 bg-green-500/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-rocket text-green-400 text-2xl"></i>
+                        </div>
+                        <h2 class="text-3xl font-bold text-green-400 mb-2">Star Trek Scenario</h2>
+                        <p class="text-gray-300">Coordinated Global Transformation</p>
+                    </div>
+                    
+                    <div class="space-y-6">
+                        <div>
+                            <h4 class="font-semibold text-white mb-3">Core Requirements</h4>
+                            <ul class="space-y-2 text-gray-300">
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-green-400 mr-3 mt-1 text-sm"></i>
+                                    <span>Global cooperation on climate, technology, and inequality</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-green-400 mr-3 mt-1 text-sm"></i>
+                                    <span>Technological breakthroughs in fusion, AI alignment, carbon capture</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-green-400 mr-3 mt-1 text-sm"></i>
+                                    <span>Fundamental economic restructuring around abundance</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-green-400 mr-3 mt-1 text-sm"></i>
+                                    <span>Cultural shift toward cooperation and long-term thinking</span>
+                                </li>
+                            </ul>
+                        </div>
+                        
+                        <div>
+                            <h4 class="font-semibold text-white mb-3">Timeline</h4>
+                            <div class="bg-green-500/10 border border-green-500/30 rounded-lg p-4">
+                                <div class="text-sm text-gray-300 mb-2">Transformation complete by 2040</div>
+                                <div class="text-xs text-green-400">Flourishing era: 2040-2050</div>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <h4 class="font-semibold text-white mb-3">Key Indicators</h4>
+                            <div class="grid grid-cols-2 gap-2 text-sm">
+                                <div class="bg-gray-800 rounded px-2 py-1 text-center">Fusion Energy</div>
+                                <div class="bg-gray-800 rounded px-2 py-1 text-center">AI Alignment</div>
+                                <div class="bg-gray-800 rounded px-2 py-1 text-center">Global Governance</div>
+                                <div class="bg-gray-800 rounded px-2 py-1 text-center">Carbon Negative</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Equilibrium Terror -->
+                <div class="scenario-card rounded-2xl p-8 border border-amber-500/30">
+                    <div class="text-center mb-8">
+                        <div class="probability-indicator bg-amber-500/20 text-amber-400 border-4 border-amber-500/50 mx-auto mb-4">
+                            35%
+                        </div>
+                        <div class="w-16 h-16 bg-amber-500/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-eye text-amber-400 text-2xl"></i>
+                        </div>
+                        <h2 class="text-3xl font-bold text-amber-400 mb-2">Equilibrium Terror</h2>
+                        <p class="text-gray-300">Authoritarian Stability</p>
+                    </div>
+                    
+                    <div class="space-y-6">
+                        <div>
+                            <h4 class="font-semibold text-white mb-3">Core Requirements</h4>
+                            <ul class="space-y-2 text-gray-300">
+                                <li class="flex items-start">
+                                    <i class="fas fa-exclamation-triangle text-amber-400 mr-3 mt-1 text-sm"></i>
+                                    <span>Acceptance of centralized power for stability</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-exclamation-triangle text-amber-400 mr-3 mt-1 text-sm"></i>
+                                    <span>Advanced surveillance and AI-based social control</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-exclamation-triangle text-amber-400 mr-3 mt-1 text-sm"></i>
+                                    <span>Suppression of political opposition and dissent</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-exclamation-triangle text-amber-400 mr-3 mt-1 text-sm"></i>
+                                    <span>Managed resource allocation through command economy</span>
+                                </li>
+                            </ul>
+                        </div>
+                        
+                        <div>
+                            <h4 class="font-semibold text-white mb-3">Timeline</h4>
+                            <div class="bg-amber-500/10 border border-amber-500/30 rounded-lg p-4">
+                                <div class="text-sm text-gray-300 mb-2">Power consolidation: 2025-2030</div>
+                                <div class="text-xs text-amber-400">Entrenchment: 2040-2050</div>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <h4 class="font-semibold text-white mb-3">Key Indicators</h4>
+                            <div class="grid grid-cols-2 gap-2 text-sm">
+                                <div class="bg-gray-800 rounded px-2 py-1 text-center">Surveillance</div>
+                                <div class="bg-gray-800 rounded px-2 py-1 text-center">AI Control</div>
+                                <div class="bg-gray-800 rounded px-2 py-1 text-center">Social Credit</div>
+                                <div class="bg-gray-800 rounded px-2 py-1 text-center">Command Economy</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mad Max -->
+                <div class="scenario-card rounded-2xl p-8 border border-red-500/30">
+                    <div class="text-center mb-8">
+                        <div class="probability-indicator bg-red-500/20 text-red-400 border-4 border-red-500/50 mx-auto mb-4">
+                            40%
+                        </div>
+                        <div class="w-16 h-16 bg-red-500/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-skull text-red-400 text-2xl"></i>
+                        </div>
+                        <h2 class="text-3xl font-bold text-red-400 mb-2">Mad Max</h2>
+                        <p class="text-gray-300">Civilizational Collapse</p>
+                    </div>
+                    
+                    <div class="space-y-6">
+                        <div>
+                            <h4 class="font-semibold text-white mb-3">Core Requirements</h4>
+                            <ul class="space-y-2 text-gray-300">
+                                <li class="flex items-start">
+                                    <i class="fas fa-times text-red-400 mr-3 mt-1 text-sm"></i>
+                                    <span>Failure to address interconnected crises</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-times text-red-400 mr-3 mt-1 text-sm"></i>
+                                    <span>Cascading system failures (economic, political, infrastructure)</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-times text-red-400 mr-3 mt-1 text-sm"></i>
+                                    <span>Resource wars and tribal fragmentation</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-times text-red-400 mr-3 mt-1 text-sm"></i>
+                                    <span>Technology regression and knowledge loss</span>
+                                </li>
+                            </ul>
+                        </div>
+                        
+                        <div>
+                            <h4 class="font-semibold text-white mb-3">Timeline</h4>
+                            <div class="bg-red-500/10 border border-red-500/30 rounded-lg p-4">
+                                <div class="text-sm text-gray-300 mb-2">Cascade begins: 2025-2030</div>
+                                <div class="text-xs text-red-400">Collapse complete by 2050</div>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <h4 class="font-semibold text-white mb-3">Key Indicators</h4>
+                            <div class="grid grid-cols-2 gap-2 text-sm">
+                                <div class="bg-gray-800 rounded px-2 py-1 text-center">System Failures</div>
+                                <div class="bg-gray-800 rounded px-2 py-1 text-center">Resource Wars</div>
+                                <div class="bg-gray-800 rounded px-2 py-1 text-center">Knowledge Loss</div>
+                                <div class="bg-gray-800 rounded px-2 py-1 text-center">Fragmentation</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Intervention Points -->
+    <section class="py-20 bg-gradient-to-b from-black to-gray-900">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-6">12 High-Leverage Intervention Points</h2>
+                <p class="text-xl text-gray-300 max-w-4xl mx-auto">
+                    These intervention points represent areas where targeted actions can create cascading positive effects 
+                    across multiple crisis domains, potentially shifting the probability distribution toward more favorable outcomes.
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="scenario-card rounded-xl p-6">
+                    <div class="flex items-center mb-4">
+                        <div class="w-10 h-10 bg-blue-500/20 rounded-lg flex items-center justify-center mr-3">
+                            <i class="fas fa-robot text-blue-400"></i>
+                        </div>
+                        <h3 class="font-bold">Algorithm Regulation</h3>
+                    </div>
+                    <p class="text-gray-300 text-sm">
+                        Change social media metrics from "engagement" to "veracity" to reduce information warfare and polarization.
+                    </p>
+                </div>
+                
+                <div class="scenario-card rounded-xl p-6">
+                    <div class="flex items-center mb-4">
+                        <div class="w-10 h-10 bg-amber-500/20 rounded-lg flex items-center justify-center mr-3">
+                            <i class="fas fa-link text-amber-400"></i>
+                        </div>
+                        <h3 class="font-bold">Resource Traceability</h3>
+                    </div>
+                    <p class="text-gray-300 text-sm">
+                        Blockchain tracking of conflict minerals and resources to reduce funding for proxy warfare.
+                    </p>
+                </div>
+                
+                <div class="scenario-card rounded-xl p-6">
+                    <div class="flex items-center mb-4">
+                        <div class="w-10 h-10 bg-purple-500/20 rounded-lg flex items-center justify-center mr-3">
+                            <i class="fas fa-shield-alt text-purple-400"></i>
+                        </div>
+                        <h3 class="font-bold">Quantum Cryptography</h3>
+                    </div>
+                    <p class="text-gray-300 text-sm">
+                        Global migration to post-quantum cryptographic standards before "Harvest Now, Decrypt Later" attacks.
+                    </p>
+                </div>
+                
+                <div class="scenario-card rounded-xl p-6">
+                    <div class="flex items-center mb-4">
+                        <div class="w-10 h-10 bg-green-500/20 rounded-lg flex items-center justify-center mr-3">
+                            <i class="fas fa-cloud text-green-400"></i>
+                        </div>
+                        <h3 class="font-bold">Climate Engineering</h3>
+                    </div>
+                    <p class="text-gray-300 text-sm">
+                        Large-scale interventions in Earth's climate system to prevent catastrophic warming and migration.
+                    </p>
+                </div>
+                
+                <div class="scenario-card rounded-xl p-6">
+                    <div class="flex items-center mb-4">
+                        <div class="w-10 h-10 bg-cyan-500/20 rounded-lg flex items-center justify-center mr-3">
+                            <i class="fas fa-coins text-cyan-400"></i>
+                        </div>
+                        <h3 class="font-bold">UBI Implementation</h3>
+                    </div>
+                    <p class="text-gray-300 text-sm">
+                        Universal Basic Income reducing economic insecurity and authoritarian susceptibility.
+                    </p>
+                </div>
+                
+                <div class="scenario-card rounded-xl p-6">
+                    <div class="flex items-center mb-4">
+                        <div class="w-10 h-10 bg-red-500/20 rounded-lg flex items-center justify-center mr-3">
+                            <i class="fas fa-newspaper text-red-400"></i>
+                        </div>
+                        <h3 class="font-bold">Media Reform</h3>
+                    </div>
+                    <p class="text-gray-300 text-sm">
+                        Supporting diverse, independent information sources to combat disinformation and manipulation.
+                    </p>
+                </div>
+                
+                <div class="scenario-card rounded-xl p-6">
+                    <div class="flex items-center mb-4">
+                        <div class="w-10 h-10 bg-indigo-500/20 rounded-lg flex items-center justify-center mr-3">
+                            <i class="fas fa-globe text-indigo-400"></i>
+                        </div>
+                        <h3 class="font-bold">International Cooperation</h3>
+                    </div>
+                    <p class="text-gray-300 text-sm">
+                        Strengthening global governance institutions to address transnational challenges effectively.
+                    </p>
+                </div>
+                
+                <div class="scenario-card rounded-xl p-6">
+                    <div class="flex items-center mb-4">
+                        <div class="w-10 h-10 bg-pink-500/20 rounded-lg flex items-center justify-center mr-3">
+                            <i class="fas fa-gavel text-pink-400"></i>
+                        </div>
+                        <h3 class="font-bold">Technology Regulation</h3>
+                    </div>
+                    <p class="text-gray-300 text-sm">
+                        Frameworks for responsible AI and biotechnology development to prevent existential risks.
+                    </p>
+                </div>
+                
+                <div class="scenario-card rounded-xl p-6">
+                    <div class="flex items-center mb-4">
+                        <div class="w-10 h-10 bg-yellow-500/20 rounded-lg flex items-center justify-center mr-3">
+                            <i class="fas fa-solar-panel text-yellow-400"></i>
+                        </div>
+                        <h3 class="font-bold">Renewable Energy</h3>
+                    </div>
+                    <p class="text-gray-300 text-sm">
+                        Rapid transition to clean energy systems to reduce resource conflicts and climate impacts.
+                    </p>
+                </div>
+                
+                <div class="scenario-card rounded-xl p-6">
+                    <div class="flex items-center mb-4">
+                        <div class="w-10 h-10 bg-teal-500/20 rounded-lg flex items-center justify-center mr-3">
+                            <i class="fas fa-recycle text-teal-400"></i>
+                        </div>
+                        <h3 class="font-bold">Circular Economy</h3>
+                    </div>
+                    <p class="text-gray-300 text-sm">
+                        Transforming production and consumption patterns to achieve sustainability and reduce waste.
+                    </p>
+                </div>
+                
+                <div class="scenario-card rounded-xl p-6">
+                    <div class="flex items-center mb-4">
+                        <div class="w-10 h-10 bg-orange-500/20 rounded-lg flex items-center justify-center mr-3">
+                            <i class="fas fa-graduation-cap text-orange-400"></i>
+                        </div>
+                        <h3 class="font-bold">Education Reform</h3>
+                    </div>
+                    <p class="text-gray-300 text-sm">
+                        Building 21st-century skills and critical thinking to create informed, engaged citizens.
+                    </p>
+                </div>
+                
+                <div class="scenario-card rounded-xl p-6">
+                    <div class="flex items-center mb-4">
+                        <div class="w-10 h-10 bg-violet-500/20 rounded-lg flex items-center justify-center mr-3">
+                            <i class="fas fa-vote-yea text-violet-400"></i>
+                        </div>
+                        <h3 class="font-bold">Democratic Renewal</h3>
+                    </div>
+                    <p class="text-gray-300 text-sm">
+                        Strengthening participatory governance institutions to maintain legitimacy and effectiveness.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Implementation Timeline -->
+    <section class="py-20 bg-black">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-6">Critical Decision Window</h2>
+                <p class="text-xl text-gray-300 max-w-4xl mx-auto">
+                    The next 2-5 years represent a critical window for implementing interventions that could 
+                    shift the trajectory toward more favorable outcomes. Key decision points and their impacts:
+                </p>
+            </div>
+            
+            <div class="grid lg:grid-cols-2 gap-12">
+                <div>
+                    <h3 class="text-2xl font-bold mb-8">2025-2027: Immediate Actions</h3>
+                    <div class="space-y-6">
+                        <div class="timeline-item">
+                            <h4 class="font-semibold text-blue-400 mb-2">Information Warfare Cascade</h4>
+                            <p class="text-gray-300 text-sm mb-2">Deepfakes and disinformation undermining democratic institutions globally</p>
+                            <div class="bg-red-500/20 border border-red-500/30 rounded px-3 py-1 text-xs inline-block">Critical Risk</div>
+                        </div>
+                        
+                        <div class="timeline-item">
+                            <h4 class="font-semibold text-blue-400 mb-2">AI Resource Competition</h4>
+                            <p class="text-gray-300 text-sm mb-2">Water and energy consumption threatening agricultural systems</p>
+                            <div class="bg-amber-500/20 border border-amber-500/30 rounded px-3 py-1 text-xs inline-block">High Risk</div>
+                        </div>
+                        
+                        <div class="timeline-item">
+                            <h4 class="font-semibold text-blue-400 mb-2">Geopolitical Escalation</h4>
+                            <p class="text-gray-300 text-sm mb-2">Proxy warfare networks expanding in Sahel and Eastern Europe</p>
+                            <div class="bg-red-500/20 border border-red-500/30 rounded px-3 py-1 text-xs inline-block">Critical Risk</div>
+                        </div>
+                        
+                        <div class="timeline-item">
+                            <h4 class="font-semibold text-blue-400 mb-2">Economic Inequality</h4>
+                            <p class="text-gray-300 text-sm mb-2">Wealth concentration reaching unsustainable levels</p>
+                            <div class="bg-amber-500/20 border border-amber-500/30 rounded px-3 py-1 text-xs inline-block">High Risk</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-2xl font-bold mb-8">2028-2035: Medium-term Risks</h3>
+                    <div class="space-y-6">
+                        <div class="timeline-item">
+                            <h4 class="font-semibold text-blue-400 mb-2">Quantum Computing Threat</h4>
+                            <p class="text-gray-300 text-sm mb-2">"Harvest now, decrypt later" attacks undermining cybersecurity</p>
+                            <div class="bg-red-500/20 border border-red-500/30 rounded px-3 py-1 text-xs inline-block">Critical Risk</div>
+                        </div>
+                        
+                        <div class="timeline-item">
+                            <h4 class="font-semibold text-blue-400 mb-2">Climate Migration Acceleration</h4>
+                            <p class="text-gray-300 text-sm mb-2">73-91 million climate migrants in 2030s alone</p>
+                            <div class="bg-red-500/20 border border-red-500/30 rounded px-3 py-1 text-xs inline-block">Critical Risk</div>
+                        </div>
+                        
+                        <div class="timeline-item">
+                            <h4 class="font-semibold text-blue-400 mb-2">Democratic Erosion</h4>
+                            <p class="text-gray-300 text-sm mb-2">Populist movements and authoritarian governance spreading</p>
+                            <div class="bg-amber-500/20 border border-amber-500/30 rounded px-3 py-1 text-xs inline-block">High Risk</div>
+                        </div>
+                        
+                        <div class="timeline-item">
+                            <h4 class="font-semibold text-blue-400 mb-2">Systemic Cascade</h4>
+                            <p class="text-gray-300 text-sm mb-2">Multiple simultaneous crises overwhelming response capacity</p>
+                            <div class="bg-red-500/20 border border-red-500/30 rounded px-3 py-1 text-xs inline-block">Critical Risk</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="py-20 bg-gradient-to-b from-black to-gray-900">
+        <div class="max-w-4xl mx-auto px-6 text-center">
+            <div class="bg-gradient-to-r from-blue-500/10 to-amber-500/10 rounded-2xl p-12 border border-blue-500/30">
+                <h2 class="text-4xl font-bold mb-6">The Window for Action is Closing</h2>
+                <p class="text-xl text-gray-300 mb-8">
+                    The scenarios presented are not inevitable futures. They are probabilistic outcomes based on current trajectories. 
+                    Through coordinated action on the 12 high-leverage intervention points, we can shift these probabilities toward more favorable outcomes for humanity.
+                </p>
+                
+                <div class="grid md:grid-cols-3 gap-8 mb-12">
+                    <div class="text-center">
+                        <div class="text-4xl font-bold text-green-400 mb-2">+15%</div>
+                        <p class="text-gray-300 text-sm">Potential Star Trek probability increase with coordinated intervention</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-4xl font-bold text-amber-400 mb-2">-25%</div>
+                        <p class="text-gray-300 text-sm">Potential Mad Max probability reduction with early action</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-4xl font-bold text-blue-400 mb-2">2-5</div>
+                        <p class="text-gray-300 text-sm">Critical years for implementation of key interventions</p>
+                    </div>
+                </div>
+                
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="volumes.html" class="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-lg font-semibold transition-all duration-300">
+                        <i class="fas fa-book mr-2"></i>
+                        Read Complete Analysis
+                    </a>
+                    <a href="contribute.html" class="border border-gray-600 hover:border-gray-400 text-white px-8 py-4 rounded-lg font-semibold transition-all duration-300">
+                        <i class="fas fa-hands-helping mr-2"></i>
+                        Join Intervention Efforts
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black border-t border-gray-800 py-12">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex flex-col md:flex-row items-center justify-between">
+                <div class="flex items-center space-x-3 mb-4 md:mb-0">
+                    <div class="w-8 h-8 bg-gradient-to-r from-blue-500 to-amber-500 rounded-lg flex items-center justify-center">
+                        <i class="fas fa-globe text-white text-sm"></i>
+                    </div>
+                    <span class="text-lg font-bold">Global Crisis Analysis</span>
+                </div>
+                
+                <div class="flex items-center space-x-6">
+                    <a href="https://github.com/magictreesproductions/global-crisis-2025-2050" target="_blank" class="text-gray-400 hover:text-white transition-colors">
+                        <i class="fab fa-github text-xl"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                        <i class="fas fa-download text-xl"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                        <i class="fas fa-share-alt text-xl"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="mt-8 pt-8 border-t border-gray-800 text-center text-gray-400 text-sm">
+                <p>© 2025 Global Crisis Analysis Project. Open source research for humanity's future.</p>
+                <p class="mt-2">This work is licensed under Creative Commons Attribution 4.0 International</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

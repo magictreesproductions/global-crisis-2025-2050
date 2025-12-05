@@ -73,6 +73,136 @@
         .timeline-item:last-child::after {
             display: none;
         }
+
+        /* 2024 Heat Wave Featured Case Study Styling */
+        .featured-case {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            border: 2px solid #ff6b6b;
+            border-radius: 12px;
+            padding: 2rem;
+            margin: 2rem 0;
+            box-shadow: 0 8px 32px rgba(255, 107, 107, 0.2);
+            position: relative;
+        }
+
+        .case-badge {
+            display: inline-block;
+            background: #ff6b6b;
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 1rem;
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0.7;
+            }
+        }
+
+        .case-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            margin: 1rem 0;
+            font-size: 0.9rem;
+            color: #94a3b8;
+        }
+
+        .case-meta span {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .case-summary {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin: 1.5rem 0;
+            color: #e2e8f0;
+        }
+
+        .case-highlights {
+            background: rgba(0, 217, 255, 0.05);
+            border-left: 4px solid #00d9ff;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 8px;
+        }
+
+        .case-highlights h3 {
+            margin-top: 0;
+            margin-bottom: 1rem;
+            color: #00d9ff;
+            font-size: 1.2rem;
+        }
+
+        .case-highlights ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .case-highlights li {
+            padding: 0.75rem 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            line-height: 1.6;
+        }
+
+        .case-highlights li:last-child {
+            border-bottom: none;
+        }
+
+        .case-highlights strong {
+            color: #00d9ff;
+            font-weight: 600;
+        }
+
+        .case-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .cta-button.secondary {
+            background: transparent;
+            border: 2px solid #00d9ff;
+            color: #00d9ff;
+        }
+
+        .cta-button.secondary:hover {
+            background: #00d9ff;
+            color: #0a0e27;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 217, 255, 0.4);
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .case-meta {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+            
+            .case-actions {
+                flex-direction: column;
+            }
+            
+            .cta-button {
+                width: 100%;
+                text-align: center;
+            }
+        }
+
     </style>
 </head>
 <body>
@@ -117,6 +247,37 @@
         </div>
     </section>
 
+    <!-- NEW: 2024 Global Heat Wave Case Study -->
+    <section class="case-study-card featured-case">
+        <div class="case-badge">NEW</div>
+            <h2>🔥 Case Study 1: The 2024 Global Heat Wave Crisis</h2>
+            <div class="case-meta">
+                <span class="case-date">📅 Published: December 2025</span>
+                <span class="case-author">👥 Research: @mag00s + Perplexity AI</span>
+                <span class="case-sources">📚 90+ peer-reviewed sources</span>
+            </div>
+            
+            <p class="case-summary">
+                Comprehensive multi-domain analysis of the 2024 global heat wave—the warmest year in 175 years of records (1.55°C above pre-industrial). Documents 62,775 European heat deaths, $417 billion in economic damages, 24 million climate-displaced people, and accelerating proximity to multiple climate tipping points.
+            </p>
+            
+            <div class="case-highlights">
+                <h3>Key Findings</h3>
+                <ul>
+                    <li><strong>Climate:</strong> 15 consecutive record-breaking months; 4 billion people experienced climate-intensified heat stress</li>
+                    <li><strong>Health:</strong> 62,775 EU deaths (June-Sept); women 46.7% higher mortality; wet-bulb temps 29-31°C</li>
+                    <li><strong>Agriculture:</strong> $20.3B US crop losses; compound drought-heat events cause -44% yield (non-linear)</li>
+                    <li><strong>Economics:</strong> $154B insured losses (27% above 10-yr avg); $263B protection gap; 11 major blackouts</li>
+                    <li><strong>Systems:</strong> Migration doubled (+90%); tipping points 79-98% probable (permafrost); democratic backsliding documented</li>
+                </ul>
+            </div>
+            
+            <div class="case-actions">
+                <a href="case-studies/2024-heat-wave-case-study.md" class="cta-button" download>📄 Download Full Case Study</a>
+                <a href="case-studies/2024_global_heat_wave_quantitative_impacts.csv" class="cta-button secondary" download>📊 Download Data (CSV)</a>
+            </div>
+    </section>
+
     <!-- Featured Case Studies -->
     <section class="py-20 bg-black">
         <div class="max-w-7xl mx-auto px-6">
@@ -142,7 +303,7 @@
                     </div>
                     
                     <div class="mb-6">
-                        <img src="volume1-geo.png" alt="Ukraine Crisis" class="w-full h-48 object-cover rounded-xl mb-4">
+                        <img src="assets/images/volume1-geo.png" alt="Ukraine Crisis" class="w-full h-48 object-cover rounded-xl mb-4">
                         <p class="text-gray-300 mb-4">
                             The Ukraine conflict exemplifies how regional wars cascade into global crises through 
                             energy markets, food security, information warfare, and alliance systems.
@@ -220,7 +381,7 @@
                     </div>
                     
                     <div class="mb-6">
-                        <img src="volume3-env-v2.png" alt="Sahel Crisis" class="w-full h-48 object-cover rounded-xl mb-4">
+                        <img src="assets/images/volume3-env-v2.png" alt="Sahel Crisis" class="w-full h-48 object-cover rounded-xl mb-4">
                         <p class="text-gray-300 mb-4">
                             The Sahel region demonstrates how climate change, resource scarcity, and political 
                             instability create feedback loops that drive conflict and migration.
@@ -298,7 +459,7 @@
                     </div>
                     
                     <div class="mb-6">
-                        <img src="volume2-tech.png" alt="Taiwan Crisis" class="w-full h-48 object-cover rounded-xl mb-4">
+                        <img src="assets/images/volume2-tech.png" alt="Taiwan Crisis" class="w-full h-48 object-cover rounded-xl mb-4">
                         <p class="text-gray-300 mb-4">
                             The Taiwan situation exemplifies how technology dependencies and geopolitical tensions 
                             create systemic risks for the global economy and security architecture.
@@ -376,7 +537,7 @@
                     </div>
                     
                     <div class="mb-6">
-                        <img src="volume3-env-v2.png" alt="Amazon Crisis" class="w-full h-48 object-cover rounded-xl mb-4">
+                        <img src="assets/images/volume3-env-v2.png" alt="Amazon Crisis" class="w-full h-48 object-cover rounded-xl mb-4">
                         <p class="text-gray-300 mb-4">
                             The Amazon rainforest approaching its tipping point demonstrates how environmental 
                             degradation can trigger irreversible climate and ecological consequences.

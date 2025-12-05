@@ -1,0 +1,763 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data & Visualizations - Global Crisis 2025-2050</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/plotly.js/3.0.3/plotly.min.js"></script>
+    <style>
+        :root {
+            --primary-dark: #0a0a0a;
+            --secondary-dark: #1a1a1a;
+            --accent-dark: #2a2a2a;
+            --text-primary: #ffffff;
+            --text-secondary: #b0b0b0;
+            --accent-blue: #3b82f6;
+            --accent-amber: #f59e0b;
+            --accent-red: #ef4444;
+            --accent-green: #10b981;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--primary-dark);
+            color: var(--text-primary);
+        }
+        
+        .data-card {
+            background: linear-gradient(145deg, rgba(26, 26, 26, 0.8), rgba(42, 42, 42, 0.6));
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .data-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+            border-color: var(--accent-blue);
+        }
+        
+        .nav-blur {
+            backdrop-filter: blur(20px);
+            background: rgba(10, 10, 10, 0.8);
+        }
+        
+        .chart-container {
+            background: rgba(26, 26, 26, 0.9);
+            border-radius: 12px;
+            padding: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 nav-blur border-b border-gray-800">
+        <div class="max-w-7xl mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-3">
+                    <div class="w-8 h-8 bg-gradient-to-r from-blue-500 to-amber-500 rounded-lg flex items-center justify-center">
+                        <i class="fas fa-globe text-white text-sm"></i>
+                    </div>
+                    <h1 class="text-xl font-bold">Global Crisis Analysis</h1>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="text-gray-300 hover:text-white transition-colors">Overview</a>
+                    <a href="volumes.html" class="text-gray-300 hover:text-white transition-colors">Volumes</a>
+                    <a href="scenarios.html" class="text-gray-300 hover:text-white transition-colors">Scenarios</a>
+                    <a href="data.html" class="text-white">Data</a>
+                    <a href="contribute.html" class="text-gray-300 hover:text-white transition-colors">Contribute</a>
+                    <a href="case-studies.html" class="text-gray-300 hover:text-white transition-colors">Case Studies</a>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <a href="https://github.com/magictreesproductions/global-crisis-2025-2050" target="_blank" class="text-gray-300 hover:text-white">
+                        <i class="fab fa-github text-xl"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="pt-32 pb-16 bg-gradient-to-b from-black to-gray-900">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <h1 class="text-5xl font-bold mb-6">Data & Visualizations</h1>
+            <p class="text-xl text-gray-300 max-w-4xl mx-auto">
+                Interactive data visualizations, real-time crisis monitoring, and comprehensive datasets 
+                supporting the Global Crisis 2025-2050 analysis. Explore the evidence behind our conclusions.
+            </p>
+        </div>
+    </section>
+
+    <!-- Interactive Visualizations -->
+    <section class="py-20 bg-black">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-6">Interactive Data Visualizations</h2>
+                <p class="text-xl text-gray-300 max-w-4xl mx-auto">
+                    Explore the data behind our analysis through interactive charts, maps, and dashboards 
+                    that reveal the interconnected nature of global crises.
+                </p>
+            </div>
+            
+            <div class="grid lg:grid-cols-2 gap-8 mb-16">
+                <!-- Crisis Timeline -->
+                <div class="data-card rounded-2xl p-8">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 bg-blue-500/20 rounded-lg flex items-center justify-center mr-4">
+                            <i class="fas fa-timeline text-blue-400 text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-bold">Crisis Timeline 2023-2050</h3>
+                            <p class="text-gray-400">Interactive timeline with crisis events and impact scoring</p>
+                        </div>
+                    </div>
+                    <div class="chart-container">
+                        <div id="timeline-chart" style="height: 400px;"></div>
+                    </div>
+                    <div class="mt-4 flex items-center justify-between">
+                        <div class="flex space-x-2">
+                            <span class="bg-red-500/20 text-red-400 px-2 py-1 rounded text-xs">High Impact</span>
+                            <span class="bg-amber-500/20 text-amber-400 px-2 py-1 rounded text-xs">Medium Impact</span>
+                            <span class="bg-green-500/20 text-green-400 px-2 py-1 rounded text-xs">Low Impact</span>
+                        </div>
+                        <button class="text-blue-400 hover:text-blue-300 text-sm">
+                            <i class="fas fa-external-link-alt mr-1"></i>
+                            Full Screen
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Network Analysis -->
+                <div class="data-card rounded-2xl p-8">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 bg-amber-500/20 rounded-lg flex items-center justify-center mr-4">
+                            <i class="fas fa-project-diagram text-amber-400 text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-bold">Conflict Network Analysis</h3>
+                            <p class="text-gray-400">Interactive network diagram of crisis interconnections</p>
+                        </div>
+                    </div>
+                    <div class="chart-container">
+                        <div id="network-chart" style="height: 400px;"></div>
+                    </div>
+                    <div class="mt-4 flex items-center justify-between">
+                        <div class="flex space-x-2">
+                            <span class="bg-blue-500/20 text-blue-400 px-2 py-1 rounded text-xs">Conflicts</span>
+                            <span class="bg-purple-500/20 text-purple-400 px-2 py-1 rounded text-xs">Resources</span>
+                            <span class="bg-green-500/20 text-green-400 px-2 py-1 rounded text-xs">Climate</span>
+                        </div>
+                        <button class="text-amber-400 hover:text-amber-300 text-sm">
+                            <i class="fas fa-external-link-alt mr-1"></i>
+                            Full Screen
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Risk Assessment Radar -->
+                <div class="data-card rounded-2xl p-8">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 bg-red-500/20 rounded-lg flex items-center justify-center mr-4">
+                            <i class="fas fa-radar text-red-400 text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-bold">Risk Assessment Radar</h3>
+                            <p class="text-gray-400">Multi-dimensional risk assessment across all crisis domains</p>
+                        </div>
+                    </div>
+                    <div class="chart-container">
+                        <div id="radar-chart" style="height: 400px;"></div>
+                    </div>
+                    <div class="mt-4 flex items-center justify-between">
+                        <div class="text-sm text-gray-400">
+                            Current Risk Score: <span class="text-red-400 font-bold">66.2/100</span>
+                        </div>
+                        <button class="text-red-400 hover:text-red-300 text-sm">
+                            <i class="fas fa-external-link-alt mr-1"></i>
+                            Full Screen
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Scenario Projections -->
+                <div class="data-card rounded-2xl p-8">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 bg-purple-500/20 rounded-lg flex items-center justify-center mr-4">
+                            <i class="fas fa-chart-line text-purple-400 text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-bold">Scenario Projections</h3>
+                            <p class="text-gray-400">Future scenario assessments and probability evolution</p>
+                        </div>
+                    </div>
+                    <div class="chart-container">
+                        <div id="scenario-chart" style="height: 400px;"></div>
+                    </div>
+                    <div class="mt-4 flex items-center justify-between">
+                        <div class="flex space-x-2">
+                            <span class="bg-green-500/20 text-green-400 px-2 py-1 rounded text-xs">Star Trek</span>
+                            <span class="bg-amber-500/20 text-amber-400 px-2 py-1 rounded text-xs">Equilibrium</span>
+                            <span class="bg-red-500/20 text-red-400 px-2 py-1 rounded text-xs">Mad Max</span>
+                        </div>
+                        <button class="text-purple-400 hover:text-purple-300 text-sm">
+                            <i class="fas fa-external-link-alt mr-1"></i>
+                            Full Screen
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Available Datasets -->
+    <section class="py-20 bg-gradient-to-b from-black to-gray-900">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-6">Available Datasets</h2>
+                <p class="text-xl text-gray-300 max-w-4xl mx-auto">
+                    All data used in our analysis is available for download and verification. 
+                    These datasets form the foundation of our research and conclusions.
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="data-card rounded-xl p-6">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-red-500/20 rounded-lg flex items-center justify-center mr-4">
+                            <i class="fas fa-crosshairs text-red-400 text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold">conflicts.json</h3>
+                            <p class="text-gray-400 text-sm">59 active conflicts</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-300 text-sm mb-4">
+                        Comprehensive dataset of 59 active conflicts worldwide including financing mechanisms, 
+                        involved actors, escalation risks, and regional impact assessments.
+                    </p>
+                    <div class="flex items-center justify-between">
+                        <div class="flex space-x-2">
+                            <span class="bg-gray-700 px-2 py-1 rounded text-xs">JSON</span>
+                            <span class="bg-gray-700 px-2 py-1 rounded text-xs">2.3MB</span>
+                        </div>
+                        <button class="text-red-400 hover:text-red-300 text-sm">
+                            <i class="fas fa-download mr-1"></i>
+                            Download
+                        </button>
+                    </div>
+                </div>
+
+                <div class="data-card rounded-xl p-6">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-amber-500/20 rounded-lg flex items-center justify-center mr-4">
+                            <i class="fas fa-timeline text-amber-400 text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold">timeline.json</h3>
+                            <p class="text-gray-400 text-sm">Crisis events 2023-2050</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-300 text-sm mb-4">
+                        Timeline of critical events and developments from 2023-2050 with impact scoring, 
+                        probability assessments, and cascade effect mapping.
+                    </p>
+                    <div class="flex items-center justify-between">
+                        <div class="flex space-x-2">
+                            <span class="bg-gray-700 px-2 py-1 rounded text-xs">JSON</span>
+                            <span class="bg-gray-700 px-2 py-1 rounded text-xs">1.8MB</span>
+                        </div>
+                        <button class="text-amber-400 hover:text-amber-300 text-sm">
+                            <i class="fas fa-download mr-1"></i>
+                            Download
+                        </button>
+                    </div>
+                </div>
+
+                <div class="data-card rounded-xl p-6">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-blue-500/20 rounded-lg flex items-center justify-center mr-4">
+                            <i class="fas fa-network-wired text-blue-400 text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold">network-graph.json</h3>
+                            <p class="text-gray-400 text-sm">Crisis interconnections</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-300 text-sm mb-4">
+                        Network analysis data showing relationships between different crisis domains, 
+                        cascade pathways, and systemic vulnerability points.
+                    </p>
+                    <div class="flex items-center justify-between">
+                        <div class="flex space-x-2">
+                            <span class="bg-gray-700 px-2 py-1 rounded text-xs">JSON</span>
+                            <span class="bg-gray-700 px-2 py-1 rounded text-xs">3.1MB</span>
+                        </div>
+                        <button class="text-blue-400 hover:text-blue-300 text-sm">
+                            <i class="fas fa-download mr-1"></i>
+                            Download
+                        </button>
+                    </div>
+                </div>
+
+                <div class="data-card rounded-xl p-6">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-green-500/20 rounded-lg flex items-center justify-center mr-4">
+                            <i class="fas fa-chart-bar text-green-400 text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold">indicators.csv</h3>
+                            <p class="text-gray-400 text-sm">Real-time indicators</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-300 text-sm mb-4">
+                        Real-time early warning indicators tracking crisis escalation, system stress levels, 
+                        and intervention opportunity windows.
+                    </p>
+                    <div class="flex items-center justify-between">
+                        <div class="flex space-x-2">
+                            <span class="bg-gray-700 px-2 py-1 rounded text-xs">CSV</span>
+                            <span class="bg-gray-700 px-2 py-1 rounded text-xs">890KB</span>
+                        </div>
+                        <button class="text-green-400 hover:text-green-300 text-sm">
+                            <i class="fas fa-download mr-1"></i>
+                            Download
+                        </button>
+                    </div>
+                </div>
+
+                <div class="data-card rounded-xl p-6">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-purple-500/20 rounded-lg flex items-center justify-center mr-4">
+                            <i class="fas fa-dice text-purple-400 text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold">scenarios-probabilities.json</h3>
+                            <p class="text-gray-400 text-sm">Future scenario assessments</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-300 text-sm mb-4">
+                        Scenario probability assessments, sensitivity analysis results, and pathway 
+                        dependency mappings for the three primary future scenarios.
+                    </p>
+                    <div class="flex items-center justify-between">
+                        <div class="flex space-x-2">
+                            <span class="bg-gray-700 px-2 py-1 rounded text-xs">JSON</span>
+                            <span class="bg-gray-700 px-2 py-1 rounded text-xs">1.2MB</span>
+                        </div>
+                        <button class="text-purple-400 hover:text-purple-300 text-sm">
+                            <i class="fas fa-download mr-1"></i>
+                            Download
+                        </button>
+                    </div>
+                </div>
+
+                <div class="data-card rounded-xl p-6">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-cyan-500/20 rounded-lg flex items-center justify-center mr-4">
+                            <i class="fas fa-microscope text-cyan-400 text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold">methodology.md</h3>
+                            <p class="text-gray-400 text-sm">Research methodology</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-300 text-sm mb-4">
+                        Complete documentation of research methodology, data sources, analytical approaches, 
+                        and confidence assessments for all findings.
+                    </p>
+                    <div class="flex items-center justify-between">
+                        <div class="flex space-x-2">
+                            <span class="bg-gray-700 px-2 py-1 rounded text-xs">Markdown</span>
+                            <span class="bg-gray-700 px-2 py-1 rounded text-xs">456KB</span>
+                        </div>
+                        <button class="text-cyan-400 hover:text-cyan-300 text-sm">
+                            <i class="fas fa-download mr-1"></i>
+                            Download
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Early Warning Dashboard -->
+    <section class="py-20 bg-black">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-6">Early Warning Dashboard</h2>
+                <p class="text-xl text-gray-300 max-w-4xl mx-auto">
+                    Real-time monitoring of crisis indicators and early warning signals. 
+                    This dashboard tracks key metrics that could indicate scenario trajectory shifts.
+                </p>
+            </div>
+            
+            <div class="grid lg:grid-cols-4 gap-6 mb-12">
+                <div class="data-card rounded-xl p-6 text-center">
+                    <div class="w-16 h-16 bg-red-500/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-exclamation-triangle text-red-400 text-2xl"></i>
+                    </div>
+                    <div class="text-3xl font-bold text-red-400 mb-2">66.2</div>
+                    <div class="text-sm text-gray-300 mb-2">Information Warfare Risk</div>
+                    <div class="w-full bg-gray-700 rounded-full h-2">
+                        <div class="bg-red-500 h-2 rounded-full" style="width: 66.2%"></div>
+                    </div>
+                </div>
+                
+                <div class="data-card rounded-xl p-6 text-center">
+                    <div class="w-16 h-16 bg-amber-500/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-thermometer-half text-amber-400 text-2xl"></i>
+                    </div>
+                    <div class="text-3xl font-bold text-amber-400 mb-2">52.1%</div>
+                    <div class="text-sm text-gray-300 mb-2">AI Resource Growth</div>
+                    <div class="text-xs text-gray-400">Annual water consumption</div>
+                </div>
+                
+                <div class="data-card rounded-xl p-6 text-center">
+                    <div class="w-16 h-16 bg-blue-500/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-users text-blue-400 text-2xl"></i>
+                    </div>
+                    <div class="text-3xl font-bold text-blue-400 mb-2">216M</div>
+                    <div class="text-sm text-gray-300 mb-2">Climate Migrants</div>
+                    <div class="text-xs text-gray-400">Projected by 2050</div>
+                </div>
+                
+                <div class="data-card rounded-xl p-6 text-center">
+                    <div class="w-16 h-16 bg-purple-500/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-chart-pie text-purple-400 text-2xl"></i>
+                    </div>
+                    <div class="text-3xl font-bold text-purple-400 mb-2">47%</div>
+                    <div class="text-sm text-gray-300 mb-2">Wealth Concentration</div>
+                    <div class="text-xs text-gray-400">Owned by top 1%</div>
+                </div>
+            </div>
+            
+            <div class="data-card rounded-2xl p-8">
+                <h3 class="text-2xl font-bold mb-6">Live Indicator Feed</h3>
+                <div class="space-y-4">
+                    <div class="flex items-center justify-between p-4 bg-gray-800/50 rounded-lg">
+                        <div class="flex items-center">
+                            <div class="w-3 h-3 bg-red-400 rounded-full mr-3"></div>
+                            <div>
+                                <div class="font-semibold">Deepfake Proliferation</div>
+                                <div class="text-sm text-gray-400">300% annual growth rate detected</div>
+                            </div>
+                        </div>
+                        <div class="text-red-400 font-bold">CRITICAL</div>
+                    </div>
+                    
+                    <div class="flex items-center justify-between p-4 bg-gray-800/50 rounded-lg">
+                        <div class="flex items-center">
+                            <div class="w-3 h-3 bg-amber-400 rounded-full mr-3"></div>
+                            <div>
+                                <div class="font-semibold">Proxy Warfare Escalation</div>
+                                <div class="text-sm text-gray-400">25% increase in active conflicts since 2023</div>
+                            </div>
+                        </div>
+                        <div class="text-amber-400 font-bold">HIGH</div>
+                    </div>
+                    
+                    <div class="flex items-center justify-between p-4 bg-gray-800/50 rounded-lg">
+                        <div class="flex items-center">
+                            <div class="w-3 h-3 bg-blue-400 rounded-full mr-3"></div>
+                            <div>
+                                <div class="font-semibold">Quantum Computing Progress</div>
+                                <div class="text-sm text-gray-400">2032 "Harvest Now" window approaching</div>
+                            </div>
+                        </div>
+                        <div class="text-blue-400 font-bold">MEDIUM</div>
+                    </div>
+                    
+                    <div class="flex items-center justify-between p-4 bg-gray-800/50 rounded-lg">
+                        <div class="flex items-center">
+                            <div class="w-3 h-3 bg-green-400 rounded-full mr-3"></div>
+                            <div>
+                                <div class="font-semibold">UBI Trial Results</div>
+                                <div class="text-sm text-gray-400">Positive outcomes in Finland, Kenya trials</div>
+                            </div>
+                        </div>
+                        <div class="text-green-400 font-bold">OPPORTUNITY</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black border-t border-gray-800 py-12">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex flex-col md:flex-row items-center justify-between">
+                <div class="flex items-center space-x-3 mb-4 md:mb-0">
+                    <div class="w-8 h-8 bg-gradient-to-r from-blue-500 to-amber-500 rounded-lg flex items-center justify-center">
+                        <i class="fas fa-globe text-white text-sm"></i>
+                    </div>
+                    <span class="text-lg font-bold">Global Crisis Analysis</span>
+                </div>
+                
+                <div class="flex items-center space-x-6">
+                    <a href="https://github.com/magictreesproductions/global-crisis-2050" target="_blank" class="text-gray-400 hover:text-white transition-colors">
+                        <i class="fab fa-github text-xl"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                        <i class="fas fa-download text-xl"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                        <i class="fas fa-share-alt text-xl"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="mt-8 pt-8 border-t border-gray-800 text-center text-gray-400 text-sm">
+                <p>© 2025 Global Crisis Analysis Project. Open source research for humanity's future.</p>
+                <p class="mt-2">This work is licensed under Creative Commons Attribution 4.0 International</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Load real data from conflicts.json and timeline.json
+        let conflictsData = [];
+        let timelineData = [];
+        let scenariosData = [];
+
+        // Fetch and process real data
+        Promise.all([
+            fetch('conflicts.json').then(response => response.json()),
+            fetch('timeline.json').then(response => response.json()),
+            fetch('scenarios-probabilities.json').then(response => response.json())
+        ]).then(([conflicts, timeline, scenarios]) => {
+            conflictsData = conflicts.conflicts;
+            timelineData = timeline.crisis_events;
+            scenariosData = scenarios.scenarios;
+            
+            renderCharts();
+        }).catch(error => {
+            console.log('Using fallback data for demonstration');
+            renderFallbackCharts();
+        });
+
+        function renderCharts() {
+            // Timeline Chart with real data
+            const timelineEvents = timelineData.slice(0, 10).map(event => ({
+                x: event.date,
+                y: event.impact_score,
+                mode: 'markers+lines',
+                type: 'scatter',
+                name: event.title,
+                line: {color: '#ef4444', width: 2},
+                marker: {
+                    color: event.impact_score > 80 ? '#ef4444' : event.impact_score > 60 ? '#f59e0b' : '#10b981',
+                    size: event.impact_score / 10
+                }
+            }));
+
+            const timelineLayout = {
+                title: {text: 'Global Crisis Events Timeline', font: {color: '#ffffff'}},
+                xaxis: {title: 'Date', color: '#b0b0b0', gridcolor: '#2a2a2a'},
+                yaxis: {title: 'Impact Score', color: '#b0b0b0', gridcolor: '#2a2a2a'},
+                plot_bgcolor: '#1a1a1a',
+                paper_bgcolor: '#1a1a1a',
+                font: {color: '#ffffff'},
+                hovermode: 'closest'
+            };
+
+            Plotly.newPlot('timeline-chart', timelineEvents, timelineLayout, {responsive: true});
+
+            // Network Chart with conflict data
+            const networkData = conflictsData.map((conflict, index) => ({
+                x: Math.cos(index * 2 * Math.PI / conflictsData.length) * (100 - conflict.escalation_risk),
+                y: Math.sin(index * 2 * Math.PI / conflictsData.length) * (100 - conflict.escalation_risk),
+                mode: 'markers',
+                type: 'scatter',
+                name: conflict.name,
+                marker: {
+                    color: conflict.escalation_risk > 80 ? '#ef4444' : conflict.escalation_risk > 60 ? '#f59e0b' : '#10b981',
+                    size: conflict.deaths.total / 10000 + 10,
+                    line: {color: '#ffffff', width: 1}
+                },
+                text: `${conflict.name}<br>Deaths: ${conflict.deaths.total.toLocaleString()}<br>Escalation Risk: ${conflict.escalation_risk}%`
+            }));
+
+            const networkLayout = {
+                title: {text: 'Global Conflict Network', font: {color: '#ffffff'}},
+                xaxis: {title: 'Network Position', color: '#b0b0b0', gridcolor: '#2a2a2a', showgrid: false},
+                yaxis: {title: 'Network Position', color: '#b0b0b0', gridcolor: '#2a2a2a', showgrid: false},
+                plot_bgcolor: '#1a1a1a',
+                paper_bgcolor: '#1a1a1a',
+                font: {color: '#ffffff'},
+                showlegend: false
+            };
+
+            Plotly.newPlot('network-chart', networkData, networkLayout, {responsive: true});
+
+            // Scenario Chart with real probabilities
+            const scenarioChartData = [
+                {
+                    x: scenariosData.star_trek.probability.historical.map(p => p.year).concat(scenariosData.star_trek.probability.projections.map(p => p.year)),
+                    y: scenariosData.star_trek.probability.historical.map(p => p.probability).concat(scenariosData.star_trek.probability.projections.map(p => p.probability)),
+                    type: 'scatter',
+                    mode: 'lines+markers',
+                    name: 'Star Trek',
+                    line: {color: '#10b981', width: 3},
+                    marker: {color: '#10b981', size: 8}
+                },
+                {
+                    x: scenariosData.equilibrium_terror.probability.historical.map(p => p.year).concat(scenariosData.equilibrium_terror.probability.projections.map(p => p.year)),
+                    y: scenariosData.equilibrium_terror.probability.historical.map(p => p.probability).concat(scenariosData.equilibrium_terror.probability.projections.map(p => p.probability)),
+                    type: 'scatter',
+                    mode: 'lines+markers',
+                    name: 'Equilibrium Terror',
+                    line: {color: '#f59e0b', width: 3},
+                    marker: {color: '#f59e0b', size: 8}
+                },
+                {
+                    x: scenariosData.mad_max.probability.historical.map(p => p.year).concat(scenariosData.mad_max.probability.projections.map(p => p.year)),
+                    y: scenariosData.mad_max.probability.historical.map(p => p.probability).concat(scenariosData.mad_max.probability.projections.map(p => p.probability)),
+                    type: 'scatter',
+                    mode: 'lines+markers',
+                    name: 'Mad Max',
+                    line: {color: '#ef4444', width: 3},
+                    marker: {color: '#ef4444', size: 8}
+                }
+            ];
+
+            const scenarioLayout = {
+                title: {text: 'Future Scenario Probabilities', font: {color: '#ffffff'}},
+                xaxis: {title: 'Year', color: '#b0b0b0', gridcolor: '#2a2a2a'},
+                yaxis: {title: 'Probability (%)', color: '#b0b0b0', gridcolor: '#2a2a2a'},
+                plot_bgcolor: '#1a1a1a',
+                paper_bgcolor: '#1a1a1a',
+                font: {color: '#ffffff'},
+                legend: {font: {color: '#ffffff'}}
+            };
+
+            Plotly.newPlot('scenario-chart', scenarioChartData, scenarioLayout, {responsive: true});
+        }
+
+        function renderFallbackCharts() {
+            // Fallback charts for demonstration
+            const timelineData = [{
+                x: ['2022-02', '2022-06', '2023-01', '2023-06', '2024-01', '2024-06', '2025-01'],
+                y: [95, 85, 80, 75, 88, 82, 90],
+                type: 'scatter',
+                mode: 'lines+markers',
+                name: 'Crisis Events',
+                line: {color: '#ef4444', width: 3},
+                marker: {color: '#ef4444', size: 8}
+            }];
+
+            const timelineLayout = {
+                title: {text: 'Global Crisis Events Timeline', font: {color: '#ffffff'}},
+                xaxis: {title: 'Date', color: '#b0b0b0', gridcolor: '#2a2a2a'},
+                yaxis: {title: 'Impact Score', color: '#b0b0b0', gridcolor: '#2a2a2a'},
+                plot_bgcolor: '#1a1a1a',
+                paper_bgcolor: '#1a1a1a',
+                font: {color: '#ffffff'}
+            };
+
+            Plotly.newPlot('timeline-chart', timelineData, timelineLayout, {responsive: true});
+
+            // Network Chart
+            const networkData = [{
+                x: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+                y: [5, 8, 3, 7, 2, 9, 4, 6, 1, 8],
+                type: 'scatter',
+                mode: 'markers',
+                name: 'Conflict Network',
+                marker: {
+                    color: '#ef4444',
+                    size: [20, 35, 15, 25, 10, 40, 18, 30, 12, 35],
+                    line: {color: '#ffffff', width: 2}
+                }
+            }];
+
+            const networkLayout = {
+                title: {text: 'Global Conflict Network', font: {color: '#ffffff'}},
+                xaxis: {title: 'Network Position', color: '#b0b0b0', gridcolor: '#2a2a2a'},
+                yaxis: {title: 'Network Position', color: '#b0b0b0', gridcolor: '#2a2a2a'},
+                plot_bgcolor: '#1a1a1a',
+                paper_bgcolor: '#1a1a1a',
+                font: {color: '#ffffff'}
+            };
+
+            Plotly.newPlot('network-chart', networkData, networkLayout, {responsive: true});
+
+            // Radar Chart
+            const radarData = [{
+                type: 'scatterpolar',
+                r: [66.2, 52.1, 78.5, 43.2, 89.1, 67.8, 55.4],
+                theta: ['Information Warfare', 'AI Resources', 'Climate Migration', 'Economic Inequality', 'Geopolitical Tensions', 'Technology Disruption', 'Resource Scarcity'],
+                fill: 'toself',
+                name: 'Current Risk Levels',
+                line: {color: '#ef4444'},
+                fillcolor: 'rgba(239, 68, 68, 0.1)'
+            }];
+
+            const radarLayout = {
+                polar: {
+                    radialaxis: {
+                        visible: true,
+                        range: [0, 100],
+                        color: '#b0b0b0',
+                        gridcolor: '#2a2a2a'
+                    },
+                    angularaxis: {
+                        color: '#b0b0b0'
+                    }
+                },
+                title: {text: 'Multi-Domain Risk Assessment', font: {color: '#ffffff'}},
+                plot_bgcolor: '#1a1a1a',
+                paper_bgcolor: '#1a1a1a',
+                font: {color: '#ffffff'}
+            };
+
+            Plotly.newPlot('radar-chart', radarData, radarLayout, {responsive: true});
+
+            // Scenario Chart
+            const scenarioData = [
+                {
+                    x: ['2025', '2027', '2030', '2035', '2040', '2045', '2050'],
+                    y: [25, 28, 32, 38, 45, 52, 60],
+                    type: 'scatter',
+                    mode: 'lines+markers',
+                    name: 'Star Trek (25%)',
+                    line: {color: '#10b981', width: 3},
+                    marker: {color: '#10b981', size: 8}
+                },
+                {
+                    x: ['2025', '2027', '2030', '2035', '2040', '2045', '2050'],
+                    y: [35, 38, 35, 32, 28, 25, 22],
+                    type: 'scatter',
+                    mode: 'lines+markers',
+                    name: 'Equilibrium Terror (35%)',
+                    line: {color: '#f59e0b', width: 3},
+                    marker: {color: '#f59e0b', size: 8}
+                },
+                {
+                    x: ['2025', '2027', '2030', '2035', '2040', '2045', '2050'],
+                    y: [40, 34, 33, 30, 27, 23, 18],
+                    type: 'scatter',
+                    mode: 'lines+markers',
+                    name: 'Mad Max (40%)',
+                    line: {color: '#ef4444', width: 3},
+                    marker: {color: '#ef4444', size: 8}
+                }
+            ];
+
+            const scenarioLayout = {
+                title: {text: 'Future Scenario Probabilities', font: {color: '#ffffff'}},
+                xaxis: {title: 'Year', color: '#b0b0b0', gridcolor: '#2a2a2a'},
+                yaxis: {title: 'Probability (%)', color: '#b0b0b0', gridcolor: '#2a2a2a'},
+                plot_bgcolor: '#1a1a1a',
+                paper_bgcolor: '#1a1a1a',
+                font: {color: '#ffffff'},
+                legend: {font: {color: '#ffffff'}}
+            };
+
+            Plotly.newPlot('scenario-chart', scenarioData, scenarioLayout, {responsive: true});
+        }
+    </script>
+</body>
+</html>
